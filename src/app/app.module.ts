@@ -20,6 +20,11 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
 
+import { AuthService } from './auth.service';
+import { AuthguardService } from './authguard.service';
+import { UserService } from './user.service';
+import { AdminAuthGuardService } from './admin-auth-guard.service';
+
 @NgModule({
   declarations: [AppComponent, NavbarComponent, HomeComponent, ProductsComponent, ShoppingCartComponent, CheckoutComponent, OrderSuccessComponent, MyOrdersComponent, LoginComponent, AdminProductsComponent, AdminOrdersComponent],
   imports: [
@@ -32,15 +37,17 @@ import { LoginComponent } from './login/login.component';
       { path: '', component: HomeComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
-      { path: 'checkout', component: CheckoutComponent },
-      { path: 'order-success', component: OrderSuccessComponent },
-      { path: 'my/orders', component: MyOrdersComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'admin/products', component: AdminProductsComponent },
-      { path: 'admin/orders', component: AdminOrdersComponent },
+
+      { path: 'checkout', component: CheckoutComponent, canActivate: [AuthguardService] },
+      { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthguardService] },
+      { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthguardService] },
+
+      { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthguardService, AdminAuthGuardService] },
+      { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthguardService, AdminAuthGuardService] },
     ]),
   ],
-  providers: [],
+  providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
