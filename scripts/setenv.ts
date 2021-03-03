@@ -5,7 +5,7 @@ const { argv } = require('yargs');
 const environment = argv.environment;
 const isProduction = environment === 'prod';
 const targetPath = isProduction ? `./src/environments/environment.prod.ts` : `./src/environments/environment.ts`;
-require('dotenv').config({ path: './.env' });
+// require('dotenv').config({ path: './.env' });
 // we have access to our environment variables
 // in the process.env object thanks to dotenv
 const environmentFileContent = `
