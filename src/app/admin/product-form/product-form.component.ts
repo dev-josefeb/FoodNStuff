@@ -3,6 +3,7 @@ import { CategoryService } from '../../category.service';
 import { AppCategory } from '../../models/app-category';
 import { ProductService } from '../../product.service';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-form',
@@ -12,7 +13,7 @@ import { map } from 'rxjs/operators';
 export class ProductFormComponent {
   categories: AppCategory[];
 
-  constructor(categoryService: CategoryService, private productService: ProductService) {
+  constructor(private categoryService: CategoryService, private productService: ProductService, private router: Router) {
     categoryService
       .getCategories()
       .snapshotChanges()
@@ -24,5 +25,6 @@ export class ProductFormComponent {
 
   save(product) {
     this.productService.create(product);
+    this.router.navigate(['admin/products']);
   }
 }
