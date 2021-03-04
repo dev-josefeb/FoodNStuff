@@ -20,4 +20,8 @@ export class ProductService {
   get(productId: string) {
     return this.db.object('/products/' + productId).valueChanges();
   }
+
+  update(productId: string, product: AppProduct) {
+    return this.db.object('/products/' + productId).update(product);
+  }
 }
