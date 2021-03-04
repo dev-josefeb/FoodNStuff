@@ -13,8 +13,6 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm ci && npm run build
         env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels
-          FIREBASE_TOKEN: "${{ secrets.FIREBASE_TOKEN }}"
           FIREBASE_API_KEY: "${{ secrets.FIREBASE_API_KEY }}"
           AUTH_DOMAIN: "${{ secrets.AUTH_DOMAIN }}"
           DATABASE_URL: "${{ secrets.DATABASE_URL }}"
@@ -30,4 +28,5 @@ jobs:
           channelId: live
           projectId: foodnstuff-dfc36
         env:
-          DATABASE_URL: "${{ secrets.DATABASE_URL }}"
+          FIREBASE_CLI_PREVIEWS: hostingchannels
+          FIREBASE_TOKEN: "${{ secrets.FIREBASE_TOKEN }}"
