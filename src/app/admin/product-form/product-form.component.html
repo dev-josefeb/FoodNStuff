@@ -14,6 +14,7 @@
     <label for="category">Category</label>
     <select id="category" class="form-control">
       <option value=""></option>
+      <option *ngFor="let category of categories" value="category">{{ category.name }}</option>
     </select>
     <div class="form-group">
       <label for="imageUrl">Image Url</label>
