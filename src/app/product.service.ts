@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { AppProduct } from './models/app-product';
 
 @Injectable({
   providedIn: 'root',
@@ -9,5 +10,9 @@ export class ProductService {
 
   create(product) {
     return this.db.list('/products').push(product);
+  }
+
+  getAll(): AngularFireList<AppProduct> {
+    return this.db.list('/products');
   }
 }
