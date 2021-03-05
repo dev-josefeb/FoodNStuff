@@ -1,0 +1,26 @@
+table {
+  width: 100%;
+}
+
+.mat-column-imageUrl {
+  width: 250px;
+  padding: 15px;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.mat-row:hover {
+  background-color: rgba(250, 250, 250, 0.836);
+}
+
+.mat-row {
+  height: 160px;
+}
+
+img {
+  width: 200px;
+  border-radius: 0.4rem;
+  object-fit: cover;
+}
