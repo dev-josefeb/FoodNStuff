@@ -16,9 +16,9 @@ export class ProductFormComponent {
   product: AppProduct = { title: '', price: 0, imageUrl: '', category: '' };
   id: string;
 
-  constructor(private categoryService: CategoryService, private productService: ProductService, private router: Router, private route: ActivatedRoute) {
+  constructor(categoryService: CategoryService, private productService: ProductService, private router: Router, private route: ActivatedRoute) {
     categoryService
-      .getCategories()
+      .getAll()
       .snapshotChanges()
       .pipe(map((changes) => changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }))))
       .subscribe((data) => {

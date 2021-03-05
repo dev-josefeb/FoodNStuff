@@ -8,7 +8,7 @@ import { AppCategory } from './models/app-category';
 export class CategoryService {
   constructor(private db: AngularFireDatabase) {}
 
-  getCategories(): AngularFireList<AppCategory> {
+  getAll(): AngularFireList<AppCategory> {
     return this.db.list('/categories');
   }
 }
