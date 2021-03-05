@@ -19,6 +19,15 @@ img {
   max-height: 250px;
 }
 
-/* .mat-card-content {
-      margin-bottom: 0px;
-    } */
+.card-footer {
+  padding: 0;
+}
+
+.mat-card {
+  margin-bottom: 30px;
+}
+
+.mat-raised-button {
+  color: white;
+  background-color: rgb(1, 105, 223);
+}

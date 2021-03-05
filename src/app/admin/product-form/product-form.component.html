@@ -6,6 +6,7 @@
         <input #title="ngModel" required [(ngModel)]="product.title" name="title" id="title" type="text" class="form-control" />
         <div class="alert alert-danger" *ngIf="title.touched && title.invalid">Title is required</div>
       </div>
+
       <div class="form-group">
         <label for="price">Price</label>
         <div class="input-group mb-3">
@@ -29,6 +30,7 @@
         <input #imageUrl="ngModel" required [(ngModel)]="product.imageUrl" name="imageUrl" id="imageUrl" type="text" class="form-control" />
         <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">Image Url is required</div>
       </div>
+
       <button type="submit" class="btn btn-lg btn-primary">Save</button>
       <button type="button" (click)="delete()" class="btn btn-lg btn-danger">Delete</button>
     </form>
