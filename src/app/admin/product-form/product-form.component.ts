@@ -4,7 +4,6 @@ import { AppCategory } from '../../models/app-category';
 import { ProductService } from '../../product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppProduct } from '../../models/app-product';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-form',
@@ -17,13 +16,9 @@ export class ProductFormComponent {
   id: string;
 
   constructor(categoryService: CategoryService, private productService: ProductService, private router: Router, private route: ActivatedRoute) {
-    categoryService
-      .getAll()
-      .snapshotChanges()
-      .pipe(map((changes) => changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }))))
-      .subscribe((data) => {
-        this.categories = data;
-      });
+    categoryService.getAll().subscribe((data) => {
+      this.categories = data;
+    });
 
     this.id = this.route.snapshot.paramMap.get('id');
     if (this.id)
