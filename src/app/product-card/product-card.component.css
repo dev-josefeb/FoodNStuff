@@ -1,0 +1,33 @@
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 700px;
+}
+
+.mat-card-image {
+  /* max-height: 320px; */
+  object-fit: cover;
+}
+
+.mat-raised-button {
+  overflow: hidden;
+}
+
+img {
+  max-height: 250px;
+}
+
+.card-footer {
+  padding: 0;
+}
+
+.mat-card {
+  margin-bottom: 30px;
+}
+
+.mat-raised-button {
+  color: white;
+  background-color: rgb(1, 105, 223);
+}

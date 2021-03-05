@@ -1,0 +1,12 @@
+<mat-card *ngIf="product.title" class="mat-elevation-z4">
+  <img mat-card-image [src]="product.imageUrl" *ngIf="product.imageUrl" alt="{{ product.title }}" />
+  <mat-card-content>
+    <div class="product-details">
+      <div>
+        <mat-card-title>{{ product.title }} </mat-card-title> <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
+      </div>
+      <mat-card-title>€{{ product.price }} </mat-card-title>
+    </div>
+  </mat-card-content>
+  <div *ngIf="showActions" class="card-footer"><button class="btn-block" mat-raised-button>Add to cart</button></div>
+</mat-card>

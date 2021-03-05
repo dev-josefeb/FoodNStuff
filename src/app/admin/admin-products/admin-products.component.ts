@@ -4,9 +4,7 @@ import { ProductService } from '../../product.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-
 import { Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-admin-products',
@@ -23,13 +21,9 @@ export class AdminProductsComponent implements OnDestroy, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(productService: ProductService) {
-    this.subscription = productService
-      .getAll()
-      .snapshotChanges()
-      .pipe(map((changes) => changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }))))
-      .subscribe((data) => {
-        this.dataSource.data = this.products = data;
-      });
+    this.subscription = productService.getAll().subscribe((data) => {
+      this.dataSource.data = this.products = data;
+    });
   }
 
   ngAfterViewInit() {
