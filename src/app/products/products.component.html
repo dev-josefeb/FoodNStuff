@@ -1,13 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-3">
-      <ul class="list-group">
-        <li *ngFor="let c of categories" class="list-group-item">{{ c.name }}</li>
-      </ul>
+      <div class="list-group">
+        <a class="list-group-item list-group-item-action" routerLink="/" [class.active]="!category">All Categories</a>
+        <a *ngFor="let c of categories" routerLink="/" [queryParams]="{ category: c.key }" class="list-group-item list-group-item-action" [class.active]="category === c.key">{{ c.name }}</a>
+      </div>
     </div>
     <div class="col">
       <div class="row">
-        <ng-container *ngFor="let product of products; let i = index">
+        <ng-container *ngFor="let product of filteredProducts; let i = index">
           <div class="col">
             <mat-card class="mat-elevation-z4">
               <img mat-card-image [src]="product.imageUrl" />
