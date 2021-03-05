@@ -1,9 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
 import { AppProduct } from '../../models/app-product';
 import { ProductService } from '../../product.service';
-import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-admin-products',
@@ -14,8 +13,6 @@ export class AdminProductsComponent implements OnDestroy {
   products: AppProduct[];
   filteredProducts: AppProduct[];
   subscription: Subscription;
-  dtOptions: DataTables.Settings = {};
-  dtTrigger: Subject<any> = new Subject<any>();
 
   constructor(private productService: ProductService) {
     this.subscription = productService
@@ -24,13 +21,8 @@ export class AdminProductsComponent implements OnDestroy {
       .pipe(map((changes) => changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }))))
       .subscribe((data) => {
         this.filteredProducts = this.products = data;
-        this.dtTrigger.next();
+        console.log('Products are ', data);
       });
-
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 10,
-    };
   }
 
   filter(query: string) {
@@ -39,6 +31,5 @@ export class AdminProductsComponent implements OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
-    this.dtTrigger.unsubscribe();
   }
 }
