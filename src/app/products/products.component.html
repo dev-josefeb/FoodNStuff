@@ -7,20 +7,7 @@
       <div class="row">
         <ng-container *ngFor="let product of filteredProducts; let i = index">
           <div class="col">
-            <mat-card class="mat-elevation-z4">
-              <img mat-card-image [src]="product.imageUrl" />
-              <mat-card-content>
-                <div class="product-details">
-                  <div>
-                    <mat-card-title>{{ product.title }} </mat-card-title> <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
-                  </div>
-                  <mat-card-title>€{{ product.price }} </mat-card-title>
-                </div>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-raised-button>Add to cart</button>
-              </mat-card-actions>
-            </mat-card>
+            <product-card [product]="product"></product-card>
           </div>
           <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>
         </ng-container>
