@@ -2,7 +2,7 @@
 <p>
   <input #query (keyup)="filter(query.value)" type="text" class="form-control" placeholder="Search.." />
 </p>
-<table class="table">
+<table *ngIf="products" datatable [dtOptions]="dtOptions" class="row-border hover table">
   <thead>
     <tr>
       <th>Title</th>
