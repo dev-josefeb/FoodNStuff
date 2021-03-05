@@ -15,7 +15,6 @@ import { map } from 'rxjs/operators';
 })
 export class AdminProductsComponent implements OnDestroy, AfterViewInit {
   products: AppProduct[];
-  filteredProducts: AppProduct[];
   subscription: Subscription;
   displayedColumns: string[] = ['imageUrl', 'title', 'category', 'price', 'actions'];
   dataSource = new MatTableDataSource<AppProduct>();
@@ -23,13 +22,13 @@ export class AdminProductsComponent implements OnDestroy, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private productService: ProductService) {
+  constructor(productService: ProductService) {
     this.subscription = productService
       .getAll()
       .snapshotChanges()
       .pipe(map((changes) => changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }))))
       .subscribe((data) => {
-        this.dataSource.data = this.filteredProducts = this.products = data;
+        this.dataSource.data = this.products = data;
       });
   }
 
