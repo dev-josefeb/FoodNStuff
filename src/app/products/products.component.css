@@ -1,0 +1,20 @@
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 700px;
+}
+
+.mat-card-image {
+  /* max-height: 320px; */
+  object-fit: cover;
+}
+
+.mat-raised-button {
+  overflow: hidden;
+}
+
+/* .mat-card-content {
+    margin-bottom: 0px;
+  } */
