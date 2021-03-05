@@ -31,9 +31,9 @@
       <button type="button" (click)="delete()" class="btn btn-lg btn-danger">Delete</button>
     </form>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6" style="padding-top: 1.5rem">
     <div class="card" style="width: 18rem">
-      <img [src]="product.imageUrl" class="card-img-top" *ngIf="product.imageUrl" />
+      <img *ngIf="product.title && product.imageUrl" [src]="product.imageUrl" class="card-img-top" />
       <div class="card-body">
         <h5 class="card-title">{{ product.title }}</h5>
         <p class="card-text">{{ product.price | currency: "EUR":true }}</p>

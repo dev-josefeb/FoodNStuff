@@ -28,6 +28,7 @@ img {
   width: 200px;
   border-radius: 0.4rem;
   object-fit: cover;
+  max-height: 140px;
 }
 
 p {
