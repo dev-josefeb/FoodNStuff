@@ -1,0 +1,36 @@
+table {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.mat-row:nth-child(even) {
+  background-color: rgba(247, 247, 247, 0.719);
+}
+
+.mat-column-imageUrl {
+  width: 250px;
+  padding: 15px;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.mat-row:hover {
+  background-color: #afafaf83;
+}
+
+.mat-row {
+  height: 160px;
+}
+
+img {
+  width: 200px;
+  border-radius: 0.4rem;
+  object-fit: cover;
+  max-height: 140px;
+}
+
+p {
+  padding-top: 2rem;
+}
