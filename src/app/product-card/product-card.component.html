@@ -8,5 +8,8 @@
       <mat-card-title>€{{ product.price }} </mat-card-title>
     </div>
   </mat-card-content>
-  <div *ngIf="showActions" class="card-footer"><button (click)="addToCart(product)" class="btn-block" mat-raised-button>Add to cart</button></div>
+  <div *ngIf="showActions" class="card-footer">
+    <button (click)="addToCart(product)" class="btn-block" mat-raised-button>Add to cart</button>
+    <div>{{ getQuantity() }}</div>
+  </div>
 </mat-card>

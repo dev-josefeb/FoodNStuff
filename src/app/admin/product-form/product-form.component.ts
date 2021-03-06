@@ -12,7 +12,7 @@ import { AppProduct } from '../../models/app-product';
 })
 export class ProductFormComponent {
   categories: AppCategory[];
-  product: AppProduct = { title: '', price: 0, imageUrl: '', category: '' };
+  product: AppProduct = { key: '', title: '', price: 0, imageUrl: '', category: '' };
   id: string;
 
   constructor(categoryService: CategoryService, private productService: ProductService, private router: Router, private route: ActivatedRoute) {
