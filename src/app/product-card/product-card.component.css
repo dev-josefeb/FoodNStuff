@@ -34,5 +34,5 @@ img {
 
 .mat-card:hover {
   transform: scale(1.02);
-  transition: transform 0.7s ease-out;
+  transition: transform 0.7s ease;
 }

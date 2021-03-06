@@ -37,9 +37,25 @@ import { ProductService } from './product.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ShoppingCartService } from './shopping-cart.service';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, ProductsComponent, ShoppingCartComponent, CheckoutComponent, OrderSuccessComponent, MyOrdersComponent, LoginComponent, AdminProductsComponent, AdminOrdersComponent, ProductFormComponent, ProductFilterComponent, ProductCardComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    ProductsComponent,
+    ShoppingCartComponent,
+    CheckoutComponent,
+    OrderSuccessComponent,
+    MyOrdersComponent,
+    LoginComponent,
+    AdminProductsComponent,
+    AdminOrdersComponent,
+    ProductFormComponent,
+    ProductFilterComponent,
+    ProductCardComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -69,7 +85,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     ]),
     BrowserAnimationsModule,
   ],
-  providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService],
+  providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService, ShoppingCartService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
