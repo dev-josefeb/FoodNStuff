@@ -5,6 +5,8 @@
 } */
 
 .my-container {
-  width: 90vw;
-  margin: 1vw;
+  /* width: 94vw; */
+  margin-right: 1.2rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
 }

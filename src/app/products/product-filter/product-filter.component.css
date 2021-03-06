@@ -5,3 +5,8 @@
 .list-group-item {
   overflow: hidden;
 }
+
+img {
+  padding-right: 10px;
+  height: 20px;
+}
