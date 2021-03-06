@@ -21,11 +21,6 @@ export class ProductCardComponent {
   getQuantity() {
     if (!this.shoppingCart) return 0;
 
-    console.log('Product is', this.product);
-    console.log('Product key is', this.product.key);
-
-    console.log();
-
     let item = this.shoppingCart[this.product.key];
     return item ? item.quantity : 0;
   }

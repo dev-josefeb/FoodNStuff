@@ -36,3 +36,12 @@ img {
   transform: scale(1.02);
   transition: transform 0.7s ease;
 }
+
+.vertical-margin {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.col {
+  font-size: 1rem;
+}
