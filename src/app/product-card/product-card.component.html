@@ -5,7 +5,7 @@
       <div>
         <mat-card-title>{{ product.title }} </mat-card-title> <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
       </div>
-      <mat-card-title>€{{ product.price }} </mat-card-title>
+      <mat-card-title>{{ product.price | currency: "EUR" }} </mat-card-title>
     </div>
   </mat-card-content>
   <div *ngIf="showActions" class="card-footer">
