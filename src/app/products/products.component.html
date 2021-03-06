@@ -1,15 +1,14 @@
-<div class="container">
+<div class="my-container">
   <div class="row">
-    <div class="col-3">
+    <div class="col-2">
       <product-filter [category]="category"></product-filter>
     </div>
     <div class="col">
-      <div class="row">
+      <div class="row row-cols-auto">
         <ng-container *ngFor="let product of filteredProducts; let i = index">
-          <div class="col">
+          <div class="col-md-4">
             <product-card [product]="product"></product-card>
           </div>
-          <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>
         </ng-container>
       </div>
     </div>
