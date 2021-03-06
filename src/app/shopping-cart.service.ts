@@ -25,7 +25,7 @@ export class ShoppingCartService {
       .snapshotChanges()
       .pipe(
         map((action: any) => {
-          return action.payload.val();
+          return new ShoppingCart(action.payload.val().items);
         })
       );
   }

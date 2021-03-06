@@ -33,7 +33,9 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/shopping-cart">
               <img src="https://img.icons8.com/emoji/96/000000/shopping-cart-emoji.png" />
-              <span *ngIf="shoppingCartItemCount && shoppingCartItemCount > 0" class="badge badge-warning badge pill">{{ shoppingCartItemCount }}</span>
+              <span *ngIf="cart$ | async as cart">
+                <span *ngIf="cart.totalItemsCount > 0" class="badge badge-warning badge pill">{{ cart.totalItemsCount }} </span>
+              </span>
             </a>
           </li>
         </ul>
