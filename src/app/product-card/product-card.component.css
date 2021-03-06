@@ -31,3 +31,8 @@ img {
   color: white;
   background-color: rgb(1, 105, 223);
 }
+
+.mat-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.7s ease-out;
+}
