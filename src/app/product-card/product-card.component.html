@@ -9,12 +9,12 @@
     </div>
   </mat-card-content>
   <div *ngIf="showActions" class="card-footer">
-    <button *ngIf="getQuantity() === 0; else updateQuantity" (click)="addToCart(product)" class="btn-block" mat-raised-button>Add to cart</button>
+    <button *ngIf="getQuantity() === 0; else updateQuantity" (click)="addToCart()" class="btn-block" mat-raised-button>Add to cart</button>
     <ng-template #updateQuantity>
       <div class="row no-gutters">
-        <div class="col-2"><button class="btn btn-secondary btn-block">-</button></div>
+        <div class="col-2"><button (click)="removeFromCart()" class="btn btn-secondary btn-block">-</button></div>
         <div class="col text-center vertical-margin">{{ getQuantity() }} in cart</div>
-        <div class="col-2"><button class="btn btn-secondary btn-block">+</button></div>
+        <div class="col-2"><button (click)="addToCart()" class="btn btn-secondary btn-block">+</button></div>
       </div>
     </ng-template>
   </div>
