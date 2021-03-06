@@ -1,3 +1,7 @@
 .dropdown-toggle {
   cursor: pointer;
 }
+
+img {
+  height: 20px;
+}
