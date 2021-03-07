@@ -18,4 +18,12 @@ export class ShoppingCart {
     }
     return itemsCount;
   }
+
+  get totalPrice(): number {
+    let sum = 0;
+    for (let productId in this.items) {
+      sum += this.items[productId].product.price * this.items[productId].quantity;
+    }
+    return sum;
+  }
 }
