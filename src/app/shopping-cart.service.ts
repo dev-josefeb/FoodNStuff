@@ -60,7 +60,8 @@ export class ShoppingCartService {
       .pipe(take(1))
       .subscribe((i: any) => {
         const quantity = (i.payload.exists() ? i.payload.val().quantity : 0) + increment;
-        item.update({ product: product, quantity: quantity });
+        if (quantity === 0) item.remove();
+        else item.update({ product: product, quantity: quantity });
       });
   }
 }

@@ -14,7 +14,7 @@
         <tr *ngFor="let item of cart.items">
           <td><img [src]="item.product.imageUrl" /> {{ item.product.title }}</td>
           <td>{{ item.quantity }}</td>
-          <td>{{ item.product.price * item.quantity | currency: "EUR" }}</td>
+          <td>{{ item.totalPrice | currency: "EUR" }}</td>
         </tr>
       </tbody>
     </table>
