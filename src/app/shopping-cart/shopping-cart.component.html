@@ -25,5 +25,6 @@
         <th>{{ cart.totalPrice | currency: "EUR" }}</th>
       </tfoot>
     </table>
+    <button (click)="clearCart()" class="btn btn-danger btn-sm">Clear Shopping Cart</button>
   </div>
 </ng-container>

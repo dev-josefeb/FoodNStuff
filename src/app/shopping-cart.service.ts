@@ -12,12 +12,6 @@ import { ShoppingCartItem } from './models/shopping-cart-item';
 export class ShoppingCartService {
   constructor(private db: AngularFireDatabase) {}
 
-  private create() {
-    return this.db.list('/shopping-carts').push({
-      dateCreated: new Date().getTime(),
-    });
-  }
-
   async getCart(): Promise<Observable<ShoppingCart>> {
     let cartId = await this.getOrCreateCartId();
     return this.db
@@ -25,9 +19,29 @@ export class ShoppingCartService {
       .snapshotChanges()
       .pipe(
         map((action: any) => {
-          return new ShoppingCart(action.payload.val().items);
+          if (action.payload.val()) return new ShoppingCart(action.payload.val().items);
+          return new ShoppingCart(null);
         })
       );
+  }
+
+  async addToCart(product: AppProduct) {
+    this.updateItem(product, 1);
+  }
+
+  async removeFromCart(product: AppProduct) {
+    this.updateItem(product, -1);
+  }
+
+  async clearCart() {
+    const cartId = await this.getOrCreateCartId();
+    this.db.object('/shopping-carts/' + cartId + '/items').remove();
+  }
+
+  private create() {
+    return this.db.list('/shopping-carts').push({
+      dateCreated: new Date().getTime(),
+    });
   }
 
   private async getOrCreateCartId(): Promise<string> {
@@ -43,14 +57,6 @@ export class ShoppingCartService {
     return this.db.object('/shopping-carts/' + cartId + '/items/' + productId);
   }
 
-  async addToCart(product: AppProduct) {
-    this.updateItem(product, 1);
-  }
-
-  async removeFromCart(product: AppProduct) {
-    this.updateItem(product, -1);
-  }
-
   private async updateItem(product: AppProduct, increment: number) {
     const cartId = await this.getOrCreateCartId();
     const item = this.getItem(cartId, product.key);
@@ -60,6 +66,7 @@ export class ShoppingCartService {
       .pipe(take(1))
       .subscribe((i: any) => {
         const quantity = (i.payload.exists() ? i.payload.val().quantity : 0) + increment;
+
         if (quantity === 0) item.remove();
         else
           item.update({
