@@ -20,7 +20,7 @@ export class ShoppingCartService {
       .pipe(
         map((action: any) => {
           if (action.payload.val()) return new ShoppingCart(action.payload.val().items);
-          return new ShoppingCart(null);
+          return new ShoppingCart({});
         })
       );
   }
