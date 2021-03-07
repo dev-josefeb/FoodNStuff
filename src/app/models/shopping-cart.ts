@@ -1,4 +1,3 @@
-import { AppPage } from '../../../e2e/src/app.po';
 import { AppProduct } from './app-product';
 import { ShoppingCartItem } from './shopping-cart-item';
 
@@ -7,13 +6,10 @@ export class ShoppingCart {
 
   constructor(public itemsMap: { [productId: string]: ShoppingCartItem }) {
     this.itemsMap = itemsMap || {};
+
     for (let productId in itemsMap) {
       let item = this.itemsMap[productId];
-      let x = new ShoppingCartItem();
-      Object.assign(x, item);
-      x.key = productId;
-
-      this.items.push(x);
+      this.items.push(new ShoppingCartItem({ ...item, key: productId }));
     }
   }
 
