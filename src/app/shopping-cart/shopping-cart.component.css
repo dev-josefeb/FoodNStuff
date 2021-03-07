@@ -19,3 +19,9 @@ thead {
 td {
   vertical-align: middle;
 }
+
+.btn-secondary:hover {
+  background-color: tomato;
+  outline: 0;
+  border-color: tomato;
+}
