@@ -8,7 +8,7 @@ export class ShoppingCart {
     this.itemsMap = itemsMap || {};
 
     for (let productId in itemsMap) {
-      let item = this.itemsMap[productId];
+      let item = itemsMap[productId];
       this.items.push(new ShoppingCartItem({ ...item, key: productId }));
     }
   }
@@ -25,7 +25,7 @@ export class ShoppingCart {
   get totalPrice(): number {
     let sum = 0;
     for (let productId in this.items) {
-      sum += this.items[productId].price * this.items[productId].quantity;
+      sum += this.items[productId].totalPrice;
     }
     return sum;
   }
