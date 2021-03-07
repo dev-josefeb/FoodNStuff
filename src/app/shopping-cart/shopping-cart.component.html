@@ -1,20 +1,22 @@
 <h1>Shopping Cart</h1>
 <ng-container *ngIf="cart$ | async as cart">
   <p>You have {{ cart.totalItemsCount }} items in your shopping cart</p>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Product</th>
-        <th>Quantity</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let productId of cart.productIds">
-        <td>{{ cart.items[productId].product.title }}</td>
-        <td>{{ cart.items[productId].quantity }}</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="mat-elevation-z8 container">
+    <table class="table table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let productId of cart.productIds">
+          <td><img [src]="cart.items[productId].product.imageUrl" /> {{ cart.items[productId].product.title }}</td>
+          <td>{{ cart.items[productId].quantity }}</td>
+          <td>{{ cart.items[productId].product.price * cart.items[productId].quantity | currency: "EUR" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </ng-container>
