@@ -62,6 +62,8 @@ import { ShoppingCartService } from './shopping-cart.service';
     BrowserModule,
     FormsModule,
     MatTableModule,
+
+    NgbModule,
     MatPaginatorModule,
     MatSortModule,
     MatCardModule,
@@ -71,7 +73,7 @@ import { ShoppingCartService } from './shopping-cart.service';
     AngularFireAuthModule,
     NgbModule,
     RouterModule.forRoot([
-      { path: '', component: ProductsComponent },
+      { path: '', component: HomeComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'login', component: LoginComponent },

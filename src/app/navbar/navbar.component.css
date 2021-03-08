@@ -5,3 +5,20 @@
 img {
   height: 20px;
 }
+
+.navbar-text {
+  padding-right: 10px;
+}
+
+.nav-link {
+  padding-left: 10px;
+}
+
+.disabled {
+  color: rgb(133, 133, 133);
+  opacity: 0.3;
+}
+
+nav {
+  font-size: large;
+}
