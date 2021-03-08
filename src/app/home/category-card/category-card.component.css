@@ -12,8 +12,13 @@
   font-size: larger;
 }
 
-img {
+.card-img-top {
+  width: 100%;
+  height: 35vh;
   object-fit: cover;
+}
+
+img {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
