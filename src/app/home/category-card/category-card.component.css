@@ -3,6 +3,11 @@
   margin: 1rem;
 }
 
+.card:hover {
+  transform: scale(1.01);
+  animation: transform 0.7s ease;
+}
+
 .card-title {
   font-size: larger;
 }
