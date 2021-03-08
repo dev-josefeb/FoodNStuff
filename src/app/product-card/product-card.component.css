@@ -26,7 +26,7 @@ img {
 .mat-raised-button {
   color: white;
   overflow: hidden;
-  background-color: rgb(1, 105, 223);
+  background-color: #17a2b8;
 }
 
 .mat-card:hover {
