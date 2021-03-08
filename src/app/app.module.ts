@@ -40,6 +40,7 @@ import { AdminAuthGuardService } from './admin-auth-guard.service';
 import { CategoryService } from './category.service';
 import { ProductService } from './product.service';
 import { ShoppingCartService } from './shopping-cart.service';
+import { CategoriesDisplayComponent } from './home/categories-display/categories-display.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ShoppingCartService } from './shopping-cart.service';
     ProductCardComponent,
     ProductQuantityComponent,
     CategoryCardComponent,
+    CategoriesDisplayComponent,
   ],
   imports: [
     BrowserModule,

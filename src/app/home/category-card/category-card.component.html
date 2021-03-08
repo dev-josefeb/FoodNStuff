@@ -1,9 +1,9 @@
-<div class="card mat-elevation-z4" style="width: 18rem">
-  <img src="https://images.pexels.com/photos/533325/pexels-photo-533325.jpeg?cs=srgb&dl=pexels-pixabay-533325.jpg&fm=jpg" class="card-img-top" alt="..." />
+<div class="card mat-elevation-z8" style="width: 22rem">
+  <img [src]="category.imageUrl" class="card-img-top" alt="..." />
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title">{{ category.name }}</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <button class="btn-info">Details</button>
+    <button class="btn-info btn-block" routerLink="/products" [queryParams]="{ category: category.id }">Browse</button>
   </div>
   <div></div>
 </div>

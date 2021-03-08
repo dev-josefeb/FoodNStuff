@@ -1,0 +1,11 @@
+<div class="my-container">
+  <div class="row">
+    <div class="row">
+      <ng-container *ngFor="let category of categories; let i = index">
+        <div class="col-4 d-flex justify-content-center">
+          <category-card [category]="category"></category-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
