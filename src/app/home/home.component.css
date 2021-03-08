@@ -33,7 +33,7 @@ img :active {
   border-radius: 10px;
 }
 
-@media screen and (max-width: 628px) {
+@media screen and (max-width: 850px) {
   .carousel-caption {
     font-size: 1rem;
     line-height: 1rem;
@@ -49,4 +49,25 @@ img :active {
     border: hidden;
     border-radius: 50px;
   }
+}
+
+.banner {
+  padding: 5rem;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  background-color: rgb(189, 189, 189);
+  width: 100%;
+}
+
+.banner-heading {
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  font-size: 5rem;
+  line-height: 5rem;
+}
+
+.banner-text {
+  text-align: center;
+  font-size: 1rem;
 }
