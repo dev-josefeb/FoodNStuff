@@ -15,6 +15,7 @@
 .card-img-top {
   width: 100%;
   min-height: 20vh;
+  max-height: 30vh;
   object-fit: cover;
 }
 
