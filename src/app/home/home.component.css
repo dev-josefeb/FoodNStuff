@@ -1,4 +1,7 @@
 /* Carousel */
+.row {
+  margin-right: 0px;
+}
 
 .carousel-container {
   width: 100%;
