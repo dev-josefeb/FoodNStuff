@@ -18,7 +18,12 @@
   overflow: hidden;
   background-color: #17a2b8;
   border-radius: 20px;
-  font-size: 1.2rem;
+}
+
+.mat-raised-button:active {
+  transform: scale(1.02);
+  animation: transform 1 ease-in-out;
+  box-shadow: 0px 0px 15px 2px grey;
 }
 
 .mat-card:hover {
