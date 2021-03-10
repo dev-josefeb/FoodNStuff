@@ -2,10 +2,6 @@
   padding: 16px;
 }
 
-.content > mat-card {
-  width: 700px;
-}
-
 .card-footer {
   padding: 0;
   border-radius: 20px;
@@ -28,10 +24,6 @@
 .mat-card:hover {
   transform: scale(1.02);
   transition: transform 0.7s ease;
-}
-
-.col {
-  font-size: 1rem;
 }
 
 .card-img-top {

@@ -17,10 +17,6 @@ button {
   box-shadow: 0px 0px 15px 2px grey;
 }
 
-.row {
-  font-size: 1.2rem;
-}
-
 .btn-plus:hover {
   background-color: rgba(0, 165, 8, 0.808);
   color: white;
