@@ -29,3 +29,8 @@ td {
 p {
   font-size: large;
 }
+
+.table th,
+.table td {
+  border: 1px !important;
+}
