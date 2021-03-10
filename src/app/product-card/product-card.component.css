@@ -8,16 +8,21 @@
 
 .card-footer {
   padding: 0;
+  border-radius: 20px;
+  border: none;
 }
 
 .mat-card {
   margin-bottom: 30px;
+  border-radius: 20px;
 }
 
 .mat-raised-button {
   color: white;
   overflow: hidden;
   background-color: #17a2b8;
+  border-radius: 20px;
+  font-size: 1.2rem;
 }
 
 .mat-card:hover {

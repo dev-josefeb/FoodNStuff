@@ -2,3 +2,28 @@
   margin-top: auto;
   margin-bottom: auto;
 }
+
+button {
+  border-radius: 20px;
+  outline: none;
+  background-color: rgb(80, 80, 80);
+  opacity: 0.7;
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  animation: transform 1 ease-in-out;
+}
+
+.row {
+  font-size: 1.2rem;
+}
+
+.btn-plus:hover {
+  background-color: rgba(0, 165, 8, 0.808);
+}
+
+.btn-minus:hover {
+  background-color: rgba(255, 73, 41, 0.726);
+}
