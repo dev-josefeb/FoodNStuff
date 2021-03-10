@@ -3,3 +3,8 @@
   padding-right: 10px;
   margin: 0px;
 }
+
+/* Faded Image as banner
+ .custom-image {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("https://images.pexels.com/photos/5945607/pexels-photo-5945607.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+} */
