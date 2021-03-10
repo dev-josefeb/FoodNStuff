@@ -10,9 +10,11 @@ import { ShoppingCartService } from '../shopping-cart.service';
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.css'],
   animations: [
-    trigger('todosAnimation', [transition(':enter', group([query('@todoAnimation', stagger(200, animateChild())), query('@todoAnimation', stagger(200, animateChild()))]))]),
+    trigger('todosAnimation', [transition(':enter', group([query('@todoAnimation', stagger(200, animateChild()))]))]),
 
     trigger('todoAnimation', [transition(':enter', [style({ opacity: 0 }), animate(1500)]), transition(':leave', [style({ backgroundColor: 'tomato' }), animate(1000), useAnimation(bounceOutLeftAnimation)])]),
+
+    trigger('exitAnimation', [transition(':leave', [style({ backgroundColor: 'tomato' }), animate(1000), useAnimation(bounceOutLeftAnimation)])]),
 
     trigger('fadeAnimation', [transition(':enter', [style({ opacity: 0 }), animate(1000)])]),
     ,
