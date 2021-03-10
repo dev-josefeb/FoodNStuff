@@ -12,7 +12,7 @@ import { ShoppingCartService } from '../shopping-cart.service';
   animations: [
     trigger('todosAnimation', [transition(':enter', group([query('@todoAnimation', stagger(200, animateChild())), query('@todoAnimation', stagger(200, animateChild()))]))]),
 
-    trigger('todoAnimation', [transition(':enter', [style({ opacity: 0 }), animate(1500)]), transition(':leave', [style({ backgroundColor: 'red' }), animate(1000), useAnimation(bounceOutLeftAnimation)])]),
+    trigger('todoAnimation', [transition(':enter', [style({ opacity: 0 }), animate(1500)]), transition(':leave', [style({ backgroundColor: 'tomato' }), animate(1000), useAnimation(bounceOutLeftAnimation)])]),
 
     trigger('fadeAnimation', [transition(':enter', [style({ opacity: 0 }), animate(1000)])]),
     ,
