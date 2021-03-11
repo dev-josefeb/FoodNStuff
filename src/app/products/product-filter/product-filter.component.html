@@ -1,6 +1,6 @@
-<div class="sticky-top">
-  <div class="list-group">
-    <a *ngIf="categories" class="list-group-item list-group-item-action" routerLink="/" [class.active]="!category"> <img src="https://img.icons8.com/carbon-copy/100/000000/category.png" /> All Categories</a>
-    <a *ngFor="let c of categories" routerLink="/" [queryParams]="{ category: c.key }" class="list-group-item list-group-item-action" [class.active]="category === c.key"> <img [src]="c.iconUrl" />{{ c.name }}</a>
+<div *ngIf="categories" class="sticky-top">
+  <div @todosAnimation class="list-group">
+    <a *ngIf="categories" class="list-group-item list-group-item-action" routerLink="/products" [class.active]="!category"> <img src="https://img.icons8.com/carbon-copy/100/000000/category.png" /> All Categories</a>
+    <a @todoAnimation *ngFor="let c of categories" routerLink="/products" [queryParams]="{ category: c.key }" class="list-group-item list-group-item-action" [class.active]="category === c.key"> <img [src]="c.iconUrl" />{{ c.name }}</a>
   </div>
 </div>

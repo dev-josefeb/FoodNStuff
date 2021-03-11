@@ -1,0 +1,7 @@
+<div *ngIf="categories" @todosAnimation class="row">
+  <ng-container *ngFor="let category of categories; let i = index">
+    <div @todoAnimation class="col-sm-6 col-lg-4 d-flex justify-content-center">
+      <category-card [category]="category"></category-card>
+    </div>
+  </ng-container>
+</div>

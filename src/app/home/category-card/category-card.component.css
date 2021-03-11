@@ -1,0 +1,40 @@
+.mat-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.7s ease;
+}
+
+.mat-card {
+  border-radius: 20px;
+  margin: 2rem;
+  padding: 0%;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-body {
+  background-color: rgb(231, 231, 231);
+  overflow: hidden;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.card-img-top {
+  width: 100%;
+  min-height: 20vh;
+  max-height: 30vh;
+  object-fit: cover;
+}
+
+img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+button {
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  padding: 0.3rem 2rem;
+}

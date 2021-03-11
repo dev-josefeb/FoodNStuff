@@ -31,6 +31,8 @@ import { ProductFilterComponent } from './products/product-filter/product-filter
 import { LoginComponent } from './login/login.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
+import { CategoryCardComponent } from './home/category-card/category-card.component';
+import { FooterComponent } from './home/footer/footer.component';
 
 import { AuthService } from './auth.service';
 import { AuthguardService } from './authguard.service';
@@ -39,6 +41,7 @@ import { AdminAuthGuardService } from './admin-auth-guard.service';
 import { CategoryService } from './category.service';
 import { ProductService } from './product.service';
 import { ShoppingCartService } from './shopping-cart.service';
+import { CategoriesDisplayComponent } from './home/categories-display/categories-display.component';
 
 @NgModule({
   declarations: [
@@ -57,11 +60,17 @@ import { ShoppingCartService } from './shopping-cart.service';
     ProductFilterComponent,
     ProductCardComponent,
     ProductQuantityComponent,
+    CategoryCardComponent,
+    CategoriesDisplayComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     MatTableModule,
+
+    NgbModule,
     MatPaginatorModule,
     MatSortModule,
     MatCardModule,
@@ -71,9 +80,9 @@ import { ShoppingCartService } from './shopping-cart.service';
     AngularFireAuthModule,
     NgbModule,
     RouterModule.forRoot([
-      { path: '', component: ProductsComponent },
+      { path: '', component: HomeComponent, data: { animation: 'isLeft' } },
       { path: 'products', component: ProductsComponent },
-      { path: 'shopping-cart', component: ShoppingCartComponent },
+      { path: 'shopping-cart', component: ShoppingCartComponent, data: { animation: 'isRight' } },
       { path: 'login', component: LoginComponent },
 
       { path: 'checkout', component: CheckoutComponent, canActivate: [AuthguardService] },
@@ -85,7 +94,6 @@ import { ShoppingCartService } from './shopping-cart.service';
       { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthguardService, AdminAuthGuardService] },
       { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthguardService, AdminAuthGuardService] },
     ]),
-    BrowserAnimationsModule,
   ],
   providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService, ShoppingCartService],
   bootstrap: [AppComponent],

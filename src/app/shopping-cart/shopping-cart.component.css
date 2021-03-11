@@ -25,3 +25,12 @@ td {
   outline: 0;
   border-color: tomato;
 }
+
+p {
+  font-size: large;
+}
+
+.table th,
+.table td {
+  border: 1px !important;
+}

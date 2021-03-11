@@ -1,0 +1,12 @@
+<mat-card class="mat-elevation-z8 d-flex">
+  <div>
+    <div class="embedded-responsive embed-responsive-16by9">
+      <img [src]="category.imageUrl" class="card-img-top embed-responsive-item" alt="..." />
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ category.name }}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <button class="btn-info btn-block" routerLink="/products" [queryParams]="{ category: category.id }">Browse</button>
+    </div>
+  </div>
+</mat-card>

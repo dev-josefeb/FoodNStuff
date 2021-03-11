@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject } from '@angular/fire/database';
 import { AppProduct } from './models/app-product';
 import { map, take } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { ShoppingCart } from './models/shopping-cart';
 import { ShoppingCartItem } from './models/shopping-cart-item';
 
@@ -10,6 +10,8 @@ import { ShoppingCartItem } from './models/shopping-cart-item';
   providedIn: 'root',
 })
 export class ShoppingCartService {
+  @Output() cartItemCountChange = new Subject<any>();
+
   constructor(private db: AngularFireDatabase) {}
 
   async getCart(): Promise<Observable<ShoppingCart>> {
@@ -75,6 +77,8 @@ export class ShoppingCartService {
             price: product.price,
             quantity: quantity,
           });
+
+        this.cartItemCountChange.next(quantity);
       });
   }
 }
