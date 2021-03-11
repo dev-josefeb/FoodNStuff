@@ -64,6 +64,7 @@ import { CategoriesDisplayComponent } from './home/categories-display/categories
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     MatTableModule,
 
@@ -77,9 +78,9 @@ import { CategoriesDisplayComponent } from './home/categories-display/categories
     AngularFireAuthModule,
     NgbModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
+      { path: '', component: HomeComponent, data: { animation: 'isLeft' } },
       { path: 'products', component: ProductsComponent },
-      { path: 'shopping-cart', component: ShoppingCartComponent },
+      { path: 'shopping-cart', component: ShoppingCartComponent, data: { animation: 'isRight' } },
       { path: 'login', component: LoginComponent },
 
       { path: 'checkout', component: CheckoutComponent, canActivate: [AuthguardService] },
@@ -91,7 +92,6 @@ import { CategoriesDisplayComponent } from './home/categories-display/categories
       { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthguardService, AdminAuthGuardService] },
       { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthguardService, AdminAuthGuardService] },
     ]),
-    BrowserAnimationsModule,
   ],
   providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService, ShoppingCartService],
   bootstrap: [AppComponent],
