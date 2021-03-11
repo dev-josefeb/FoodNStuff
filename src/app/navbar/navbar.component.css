@@ -1,5 +1,17 @@
+.bg-dark {
+  background-color: rgb(26, 26, 26) !important;
+}
+
+.disabled {
+  color: rgb(168, 168, 168) !important;
+}
+
 .dropdown-toggle {
   cursor: pointer;
+}
+
+#navbarDropdownMenuLink {
+  padding-left: 130px;
 }
 
 img {
@@ -45,4 +57,10 @@ a:hover {
   transform: scale(1.01);
   text-shadow: 2px 2px 15px #cececeb0;
   text-decoration: none;
+}
+
+.form-control {
+  opacity: 0.8;
+  border-radius: 10px;
+  margin-left: 20px;
 }
