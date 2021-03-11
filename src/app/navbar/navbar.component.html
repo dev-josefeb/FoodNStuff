@@ -5,6 +5,8 @@
       <a class="navbar-text" routerLink="/products">Products</a>
       <a class="navbar-text nav-link disabled" routerLink="/">Blog</a>
       <a class="navbar-text nav-link disabled" routerLink="/">Contact</a>
+      <a class="navbar-text nav-link disabled" routerLink="/">Featured</a>
+      <a class="navbar-text nav-link disabled" routerLink="/">News</a>
     </span>
 
     <span class="navbar-text">
@@ -15,9 +17,18 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <ng-template #anonymousUser>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/login"> <img src="https://img.icons8.com/color/96/000000/key.png" /> Login</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="https://img.icons8.com/color/96/000000/key.png" /> Login </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" (click)="login()">Google Login</a>
+                <a class="dropdown-item disabled" href="#">Facebook Login</a>
+                <a class="dropdown-item disabled" href="#">Email Login</a>
+              </div>
             </li>
+
+            <!-- <li class="nav-item">
+              <a class="nav-link" routerLink="/login"> <img src="https://img.icons8.com/color/96/000000/key.png" /> Login</a>
+            </li> -->
           </ng-template>
           <li>
             <form class="d-flex">

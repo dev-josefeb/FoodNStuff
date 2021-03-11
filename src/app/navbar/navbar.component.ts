@@ -36,4 +36,8 @@ export class NavbarComponent implements OnInit {
   resetState() {
     this.state = 'initial';
   }
+
+  login() {
+    this.auth.login();
+  }
 }

@@ -27,3 +27,8 @@ nav {
   border-radius: 20px;
   font-size: 1rem;
 }
+
+.dropdown-menu {
+  padding: 0%;
+  cursor: pointer;
+}
