@@ -31,4 +31,17 @@ nav {
 .dropdown-menu {
   padding: 0%;
   cursor: pointer;
+  border-radius: 10px;
+}
+
+.dropdown-item {
+  padding: 0.8rem;
+  border-radius: 10px;
+  padding-left: 1.2rem;
+}
+
+a:hover {
+  transform: scale(1.01);
+  text-shadow: 2px 2px 15px #cececeb0;
+  text-decoration: none;
 }
