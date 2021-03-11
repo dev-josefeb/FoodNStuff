@@ -29,6 +29,7 @@ nav {
 }
 
 .dropdown-menu {
+  opacity: 0.9;
   padding: 0%;
   cursor: pointer;
   border-radius: 10px;
