@@ -14,6 +14,12 @@
   padding-left: 130px;
 }
 
+@media screen and (max-width: 974px) {
+  #navbarDropdownMenuLink {
+    padding-left: 10px;
+  }
+}
+
 img {
   height: 20px;
 }

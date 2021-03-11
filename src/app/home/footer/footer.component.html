@@ -1,11 +1,13 @@
 <footer class="block block--dark footer">
   <div class="container grid footer__sections">
-    <section class="collapsible collapsible--expanded footer__section">
+    <section [ngClass]="button1 ? 'collapsible--expanded' : ''" class="collapsible footer__section">
       <div class="collapsible__header">
         <h2 class="collapsible__heading footer__heading">Products</h2>
-        <svg class="icon icon--white collapsible__chevron">
-          <use href="images/sprite.svg#chevron"></use>
-        </svg>
+        <button (click)="button1 = !button1">
+          <svg class="icon icon--white collapsible__chevron">
+            <use href="../../assets/icons/sprite.svg#chevron"></use>
+          </svg>
+        </button>
       </div>
       <div class="collapsible__content">
         <ul class="list">
@@ -17,12 +19,14 @@
         </ul>
       </div>
     </section>
-    <section class="collapsible footer__section">
+    <section [ngClass]="button2 ? 'collapsible--expanded' : ''" class="collapsible footer__section">
       <div class="collapsible__header">
         <h2 class="collapsible__heading footer__heading">Company</h2>
-        <svg class="icon icon--white collapsible__chevron">
-          <use href="images/sprite.svg#chevron"></use>
-        </svg>
+        <button (click)="button2 = !button2">
+          <svg class="icon icon--white collapsible__chevron">
+            <use href="../../assets/icons/sprite.svg#chevron"></use>
+          </svg>
+        </button>
       </div>
       <div class="collapsible__content">
         <ul class="list">
@@ -33,12 +37,14 @@
         </ul>
       </div>
     </section>
-    <section class="collapsible footer__section">
+    <section [ngClass]="button3 ? 'collapsible--expanded' : ''" class="collapsible footer__section">
       <div class="collapsible__header">
         <h2 class="collapsible__heading footer__heading">News</h2>
-        <svg class="icon icon--white collapsible__chevron">
-          <use href="images/sprite.svg#chevron"></use>
-        </svg>
+        <button (click)="button3 = !button3">
+          <svg class="icon icon--white collapsible__chevron">
+            <use href="../../assets/icons/sprite.svg#chevron"></use>
+          </svg>
+        </button>
       </div>
       <div class="collapsible__content">
         <ul class="list">
@@ -49,12 +55,14 @@
         </ul>
       </div>
     </section>
-    <section class="collapsible footer__section">
+    <section [ngClass]="button4 ? 'collapsible--expanded' : ''" class="collapsible footer__section">
       <div class="collapsible__header">
         <h2 class="collapsible__heading footer__heading">Support</h2>
-        <svg class="icon icon--white collapsible__chevron">
-          <use href="images/sprite.svg#chevron"></use>
-        </svg>
+        <button (click)="button4 = !button4">
+          <svg class="icon icon--white collapsible__chevron">
+            <use href="../../assets/icons/sprite.svg#chevron"></use>
+          </svg>
+        </button>
       </div>
       <div class="collapsible__content">
         <ul class="list">

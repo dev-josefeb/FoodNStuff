@@ -434,3 +434,43 @@ a {
 .nav__logo {
   width: 100%;
 }
+
+/* Icons */
+
+.icon {
+  height: 40px;
+  width: 40px;
+}
+
+.icon--small {
+  height: 30px;
+  width: 30px;
+}
+
+.icon--primary {
+  fill: var(--color-primary);
+}
+
+.icon--white {
+  fill: #fff;
+}
+
+.icon-container {
+  align-items: center;
+  background: #f3f9fa;
+  border-radius: 100%;
+  display: inline-flex;
+  height: 64px;
+  justify-content: center;
+  width: 64px;
+}
+
+.icon-container--accent {
+  background: var(--color-accent);
+}
+
+/* Button */
+button {
+  border: none;
+  background: none;
+}
