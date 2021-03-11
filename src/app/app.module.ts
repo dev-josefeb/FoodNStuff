@@ -32,6 +32,7 @@ import { LoginComponent } from './login/login.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import { CategoryCardComponent } from './home/category-card/category-card.component';
+import { FooterComponent } from './home/footer/footer.component';
 
 import { AuthService } from './auth.service';
 import { AuthguardService } from './authguard.service';
@@ -61,6 +62,7 @@ import { CategoriesDisplayComponent } from './home/categories-display/categories
     ProductQuantityComponent,
     CategoryCardComponent,
     CategoriesDisplayComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
