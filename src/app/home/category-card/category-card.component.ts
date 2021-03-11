@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AppCategory } from '../../models/app-category';
 
 @Component({
@@ -6,9 +6,13 @@ import { AppCategory } from '../../models/app-category';
   templateUrl: './category-card.component.html',
   styleUrls: ['./category-card.component.css'],
 })
-export class CategoryCardComponent implements OnInit {
+export class CategoryCardComponent {
   @Input('category') category: AppCategory;
+  loading: boolean = true;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  onLoad() {
+    this.loading = false;
+  }
 }

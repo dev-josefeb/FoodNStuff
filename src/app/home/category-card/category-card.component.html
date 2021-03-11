@@ -1,7 +1,8 @@
 <mat-card class="mat-elevation-z8 d-flex">
   <div>
     <div class="embedded-responsive embed-responsive-16by9">
-      <img [src]="category.imageUrl" class="card-img-top embed-responsive-item" alt="..." />
+      <img *ngIf="loading" class="card-img-top embed-responsive-item" src="/assets/loadingImages/image_loading.gif" alt="loading" />
+      <img [hidden]="loading" (load)="onLoad()" [src]="category.imageUrl" class="card-img-top embed-responsive-item" alt="..." />
     </div>
     <div class="card-body">
       <h5 class="card-title">{{ category.name }}</h5>

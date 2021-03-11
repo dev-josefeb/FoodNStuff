@@ -1,5 +1,6 @@
 <mat-card *ngIf="product.title" class="mat-elevation-z4">
-  <img class="card-img-top" mat-card-image [src]="product.imageUrl" *ngIf="product.imageUrl" alt="{{ product.title }}" />
+  <img *ngIf="imageLoading" class="card-img-top" mat-card-image src="/assets/loadingImages/image_loading.gif" alt="loading" />
+  <img [hidden]="imageLoading" (load)="onLoad()" class="card-img-top" mat-card-image [src]="product.imageUrl" *ngIf="product.imageUrl" alt="{{ product.title }}" />
   <mat-card-content>
     <div class="product-details">
       <div>
