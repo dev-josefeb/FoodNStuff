@@ -20,6 +20,10 @@
   border-radius: 20px;
 }
 
+.mat-raised-button:hover {
+  opacity: 0.9;
+}
+
 .mat-raised-button:active {
   transform: scale(1.02);
   animation: transform 1 ease-in-out;

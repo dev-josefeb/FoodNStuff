@@ -316,6 +316,38 @@ a {
   }
 }
 
+/* Collapsible */
+.collapsible__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapsible__heading {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.collapsible__chevron {
+  transform: rotate(-90deg);
+  transition: transform 0.3s;
+}
+
+.collapsible__content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__chevron {
+  transform: rotate(0);
+}
+
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+}
+
 /* Footer block */
 .footer {
   background: #232323;
@@ -346,7 +378,7 @@ a {
 
 .footer__brand {
   margin-top: 5rem;
-  text-align: center;
+  text-align: left;
 }
 
 .footer__brand img {
@@ -360,6 +392,11 @@ a {
   color: #fff;
   opacity: 0.3;
   line-height: 2.3rem;
+}
+
+.footer__text {
+  text-align: left;
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -396,4 +433,44 @@ a {
 
 .nav__logo {
   width: 100%;
+}
+
+/* Icons */
+
+.icon {
+  height: 40px;
+  width: 40px;
+}
+
+.icon--small {
+  height: 30px;
+  width: 30px;
+}
+
+.icon--primary {
+  fill: var(--color-primary);
+}
+
+.icon--white {
+  fill: #fff;
+}
+
+.icon-container {
+  align-items: center;
+  background: #f3f9fa;
+  border-radius: 100%;
+  display: inline-flex;
+  height: 64px;
+  justify-content: center;
+  width: 64px;
+}
+
+.icon-container--accent {
+  background: var(--color-accent);
+}
+
+/* Button */
+button {
+  border: none;
+  background: none;
 }

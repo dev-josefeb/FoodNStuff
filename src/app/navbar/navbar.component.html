@@ -1,50 +1,57 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-  <div class="container-fluid">
-    <span class="navbar-text">
-      <a class="navbar-brand" routerLink="/">FoodN'Stuff</a>
-      <a class="navbar-text" routerLink="/products">Products</a>
-      <a class="navbar-text nav-link disabled" routerLink="/">Blog</a>
-      <a class="navbar-text nav-link disabled" routerLink="/">Contact</a>
-    </span>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">FoodN'Stuff</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <span class="navbar-text">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/products">Products <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" routerLink="/">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" routerLink="/">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" routerLink="/">Featured</a>
+      </li>
+    </ul>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <ng-template #anonymousUser>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/login"> <img src="https://img.icons8.com/color/96/000000/key.png" /> Login</a>
-            </li>
-          </ng-template>
-          <li>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            </form>
-          </li>
-          <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
-            <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="https://img.icons8.com/color/96/000000/gender-neutral-user.png" /> {{ appUser.name }}</a>
-            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
-              <ng-container *ngIf="appUser.isAdmin">
-                <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
-                <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
-              </ng-container>
-              <a class="dropdown-item" (click)="logout()">Logout</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/shopping-cart">
-              <img src="https://img.icons8.com/emoji/96/000000/shopping-cart-emoji.png" />
-              <span *ngIf="cart$ | async as cart">
-                <span (@notificationAnimation.done)="resetState()" [@notificationAnimation]="state" *ngIf="cart.totalItemsCount > 0" class="badge badge-warning badge pill">{{ cart.totalItemsCount }} </span>
-              </span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </span>
+    <ng-template #anonymousUser>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="https://img.icons8.com/color/96/000000/key.png" /> </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" (click)="login()">Google Login</a>
+          <a class="dropdown-item disabled" href="#">Facebook Login</a>
+          <a class="dropdown-item disabled" href="#">Email Login</a>
+        </div>
+      </li>
+    </ng-template>
+
+    <ul class="navbar-nav">
+      <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="https://img.icons8.com/color/96/000000/gender-neutral-user.png" /> {{ appUser.name }}</a>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
+          <ng-container *ngIf="appUser.isAdmin">
+            <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
+            <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
+          </ng-container>
+          <a class="dropdown-item" (click)="logout()">Logout</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/shopping-cart">
+          <img src="https://img.icons8.com/emoji/96/000000/shopping-cart-emoji.png" />
+          <span *ngIf="cart$ | async as cart">
+            <span (@notificationAnimation.done)="resetState()" [@notificationAnimation]="state" *ngIf="cart.totalItemsCount > 0" class="badge badge-warning badge pill">{{ cart.totalItemsCount }} </span>
+          </span>
+        </a>
+      </li>
+    </ul>
   </div>
 </nav>

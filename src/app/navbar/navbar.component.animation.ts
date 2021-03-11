@@ -14,6 +14,6 @@ export const notificationAnimation = trigger('notificationAnimation', [
       borderRadius: '20px',
     })
   ),
-  transition('initial=>final', animate('500ms')),
+  transition('initial=>final', animate('100ms')),
   transition('final=>initial', animate('200ms')),
 ]);
