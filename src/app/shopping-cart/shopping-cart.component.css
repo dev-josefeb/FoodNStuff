@@ -1,6 +1,13 @@
+.main-container {
+  /* width: 94vw; */
+  margin-right: 1.5srem;
+  margin-left: 1.5rem;
+  margin-top: 75px;
+}
+
 .container {
   padding: 0;
-  margin-top: 50px;
+  margin-top: 75px;
   margin-bottom: 50px;
   font-size: large;
 }
@@ -37,4 +44,29 @@ p {
 
 h1 {
   padding-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  img {
+    border-radius: 20px;
+    width: 60px;
+    object-fit: cover;
+  }
+
+  .container {
+    padding: 0;
+    margin-top: 75px;
+    margin-bottom: 50px;
+    font-size: small;
+  }
+
+  .main-container {
+    /* width: 94vw; */
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  p {
+    font-size: small;
+  }
 }

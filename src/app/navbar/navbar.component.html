@@ -43,15 +43,12 @@
           <a class="dropdown-item" (click)="logout()">Logout</a>
         </div>
       </li>
-
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/shopping-cart">
-          <img src="https://img.icons8.com/emoji/96/000000/shopping-cart-emoji.png" />
-          <span *ngIf="cart$ | async as cart">
-            <span (@notificationAnimation.done)="resetState()" [@notificationAnimation]="state" *ngIf="cart.totalItemsCount > 0" class="badge badge-warning badge pill">{{ cart.totalItemsCount }} </span>
-          </span>
-        </a>
-      </li>
     </ul>
   </div>
+  <a class="nav-link" routerLink="/shopping-cart">
+    <img src="https://img.icons8.com/emoji/96/000000/shopping-cart-emoji.png" />
+    <span *ngIf="cart$ | async as cart">
+      <span (@notificationAnimation.done)="resetState()" [@notificationAnimation]="state" *ngIf="cart.totalItemsCount > 0" class="badge badge-warning badge pill">{{ cart.totalItemsCount }} </span>
+    </span>
+  </a>
 </nav>
