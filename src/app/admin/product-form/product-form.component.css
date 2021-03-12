@@ -1,3 +1,9 @@
 .btn-danger {
   margin-left: 1rem;
 }
+
+.my-container {
+  margin-top: 75px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
