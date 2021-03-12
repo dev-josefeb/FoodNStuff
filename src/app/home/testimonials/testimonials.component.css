@@ -1,0 +1,54 @@
+ngb-carousel {
+  outline: none !important;
+}
+
+.user-pic {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  margin-bottom: 5rem;
+  object-fit: cover;
+}
+
+.user-text {
+  margin-bottom: 2rem;
+  line-height: 2rem;
+  font-style: italic;
+}
+
+.jumbotron {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.quote-heading {
+  padding-top: 5vh;
+  margin-top: 15vh;
+  margin-bottom: 5vh;
+  font-size: 4vh;
+  line-height: 4vh;
+  color: rgba(56, 56, 56, 0.829);
+}
+
+/* .quote-block {
+  /* box-shadow: 0px 0px 20px grey; */
+/* background-color: rgb(180, 180, 180);
+  background-image: url(https://images.pexels.com/photos/2835436/pexels-photo-2835436.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  filter: blur(8px);
+  -webkit-filter: blur(8px); 
+} */
+
+.user-text::before {
+  content: "“";
+  display: block;
+  font-size: 6vh;
+  font-family: "Times New Roman", Times, serif;
+  text-align: left;
+}
+
+.user-text::after {
+  content: "„";
+  font-size: 6vh;
+  display: block;
+  font-family: "Times New Roman", Times, serif;
+  text-align: right;
+}
