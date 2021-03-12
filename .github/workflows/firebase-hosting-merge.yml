@@ -28,7 +28,7 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    steps: actions/checkout@v2
+    steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - uses: FirebaseExtended/action-hosting-deploy@v0
