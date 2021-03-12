@@ -22,6 +22,7 @@
 
 img {
   height: 20px;
+  vertical-align: text-top;
 }
 
 .navbar-text {

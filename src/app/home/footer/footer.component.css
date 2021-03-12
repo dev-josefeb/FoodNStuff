@@ -385,10 +385,11 @@ a {
   /*TODO: Consider refactoring and applying to all images*/
   width: 100%;
   max-width: 230px;
+  padding-top: 15px;
+  padding-right: 50px;
 }
 
 .footer__copyright {
-  font-size: 2.1rem;
   color: #fff;
   opacity: 0.3;
   line-height: 2.3rem;
@@ -416,10 +417,6 @@ a {
   .footer__brand {
     order: -1;
     margin-top: 1rem;
-  }
-
-  .footer__copyright {
-    font-size: 1rem;
   }
 
   .footer__section {
