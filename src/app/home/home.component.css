@@ -3,6 +3,10 @@
   margin-right: 0px;
 }
 
+ngb-carousel {
+  outline: none !important;
+}
+
 .carousel-container {
   width: 100%;
   height: 60vh;
