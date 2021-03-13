@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
-import { faStackOverflow, faGoogle, faGithub, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGoogle, faGithub, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,7 +9,6 @@ import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  faStackOverflow = faStackOverflow;
   faGithub = faGithub;
   faFacebook = faFacebook;
   faTwitter = faTwitter;

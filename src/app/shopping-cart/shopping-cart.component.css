@@ -27,7 +27,7 @@ td {
   vertical-align: middle;
 }
 
-.btn-secondary:hover {
+.btn-sm:hover {
   background-color: tomato;
   outline: 0;
   border-color: tomato;
@@ -69,4 +69,13 @@ h1 {
   p {
     font-size: small;
   }
+}
+
+.col-md-12 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.col-md-4 {
+  margin-bottom: 20px;
 }

@@ -32,8 +32,16 @@
         </div>
       </div>
     </div>
-    <div class="text-center">
-      <button routerLink="/checkout" *ngIf="cart.items.length" class="btn btn-primary">Checkout</button>
+    <div class="container">
+      <div class="row">
+        <div class="text-center col-md-4">
+          <button routerLink="/products" class="btn btn-secondary btn-block">Continue Shopping</button>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="text-center col-md-4">
+          <button routerLink="/checkout" *ngIf="cart.items.length" class="btn btn-primary btn-block">Proceed to Checkout</button>
+        </div>
+      </div>
     </div>
   </ng-container>
 </div>
