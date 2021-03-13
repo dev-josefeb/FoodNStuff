@@ -109,6 +109,11 @@ a {
   cursor: pointer;
 }
 
+.close:hover {
+  color: tomato;
+  transform: scale(1.05);
+}
+
 img {
   /* height: 5rem; */
   border-radius: 0.8rem;
@@ -207,6 +212,7 @@ a:hover {
   background-color: rgb(109, 109, 109);
   max-width: 20px;
   margin-bottom: 5px;
+  border-radius: 2vw;
 }
 
 .btn-secondary {
@@ -227,4 +233,14 @@ a:hover {
 .scroll {
   max-height: 48vh;
   overflow-y: auto;
+}
+
+.btn-plus:hover {
+  background-color: rgba(0, 165, 8, 0.808);
+  color: white;
+}
+
+.btn-minus:hover {
+  background-color: rgba(255, 73, 41, 0.726);
+  color: white;
 }
