@@ -45,4 +45,8 @@ export class ShoppingCartComponent implements OnInit {
   removeFromCart(product: AppProduct) {
     this.cartService.removeFromCart(product);
   }
+
+  removeItemFromCart(product: AppProduct) {
+    this.cartService.clearProductFromCart(product);
+  }
 }

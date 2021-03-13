@@ -23,7 +23,7 @@
                 {{ cart.getQuantity(item) }}
                 <button (click)="addToCart(item)" class="btn-quantity btn-plus">+</button>
               </div>
-              <div class="col">{{ item.totalPrice | currency: "EUR" }} <span class="close">&#10005;</span></div>
+              <div class="col">{{ item.totalPrice | currency: "EUR" }} <span (click)="removeItemFromCart(item)" class="close">&#10005;</span></div>
             </div>
           </div>
         </div>
