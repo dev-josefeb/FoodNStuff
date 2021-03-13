@@ -74,6 +74,7 @@ export class ShoppingCartService {
           item.update({
             title: product.title,
             imageUrl: product.imageUrl,
+            category: product.category,
             price: product.price,
             quantity: quantity,
           });

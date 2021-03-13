@@ -1,46 +1,58 @@
-<div class="main-container">
-  <h1 class="text-center">Shopping Cart</h1>
+<div class="card">
   <ng-container *ngIf="cart$ | async as cart">
-    <p class="text-center">You have {{ cart.totalItemsCount }} items in your shopping cart</p>
     <div class="row">
-      <div @exitAnimation *ngIf="cart.items.length > 0" class="mat-elevation-z8 container">
-        <table class="table borderless table-striped table-hover">
-          <thead class="thead-dark">
-            <tr>
-              <th>Product</th>
-              <th>Quantity</th>
-              <th>Total Price</th>
-            </tr>
-          </thead>
-          <tbody @todosAnimation>
-            <tr @todoAnimation *ngFor="let item of cart.items; trackBy: identify">
-              <td><img [src]="item.imageUrl" /> {{ item.title }}</td>
-              <td>
-                <product-quantity [product]="item" [shopping-cart]="cart"></product-quantity>
-              </td>
-              <td>{{ item.totalPrice | currency: "EUR" }}</td>
-            </tr>
-            <tr @todoAnimation>
-              <th></th>
-              <th>Total Price (incl. Tax):</th>
-              <th>{{ cart.totalPrice | currency: "EUR" }}</th>
-            </tr>
-          </tbody>
-        </table>
-        <div class="text-center">
-          <button (click)="clearCart()" class="btn btn-secondary btn-block btn-sm">Clear Shopping Cart</button>
+      <div @todosAnimation class="col-md-8 cart">
+        <div class="title">
+          <div class="row">
+            <div class="col">
+              <h4><b>Shopping Cart</b></h4>
+            </div>
+            <div class="col align-self-center text-right text-muted"><button class="btn-secondary" (click)="clearCart()">Clear Cart</button> {{ cart.totalItemsCount }} items</div>
+          </div>
+        </div>
+        <div class="scroll">
+          <div @todoAnimation [class.border-bottom]="i === cart.items.length - 1 || i % 2 !== 0" [class.border-top]="i === 0 || i % 2 !== 0" class="row border-top border-bottom" *ngFor="let item of cart.items; trackBy: identify; let i = index">
+            <div class="row main align-items-center">
+              <div class="col-3"><img class="img-fluid" [src]="item.imageUrl" /></div>
+              <div class="col">
+                <div class="row text-muted">{{ item.category | titlecase }}</div>
+                <div class="row">{{ item.title }}</div>
+              </div>
+              <div class="col">
+                <button (click)="removeFromCart(item)" class="btn-quantity btn-minus">-</button>
+                {{ cart.getQuantity(item) }}
+                <button (click)="addToCart(item)" class="btn-quantity btn-plus">+</button>
+              </div>
+              <div class="col">{{ item.totalPrice | currency: "EUR" }} <span class="close">&#10005;</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="back-to-shop">
+          <a class="text-muted" routerLink="/products"> < Back to shop</a>
         </div>
       </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="text-center col-md-4">
-          <button routerLink="/products" class="btn btn-secondary btn-block">Continue Shopping</button>
+      <div class="col-md-4 summary">
+        <div>
+          <h5><b>Summary</b></h5>
         </div>
-        <div class="col-md-4"></div>
-        <div class="text-center col-md-4">
-          <button routerLink="/checkout" *ngIf="cart.items.length" class="btn btn-primary btn-block">Proceed to Checkout</button>
+        <hr />
+        <div class="row">
+          <div class="col" style="padding-left: 0">{{ cart.totalItemsCount }} Items</div>
+          <div class="col text-right">{{ cart.totalPrice | currency: "EUR" }}</div>
         </div>
+        <form>
+          <p>SHIPPING</p>
+          <select>
+            <option class="text-muted">Free-Delivery- &euro;0.00</option>
+          </select>
+          <p>PROMO CODE</p>
+          <input id="code" placeholder="Enter your code" />
+        </form>
+        <div class="row" style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding: 2vh 0">
+          <div class="col">TOTAL PRICE</div>
+          <div class="col text-right">{{ cart.totalPrice | currency: "EUR" }}</div>
+        </div>
+        <button class="btn" routerLink="/checkout">CHECKOUT</button>
       </div>
     </div>
   </ng-container>
