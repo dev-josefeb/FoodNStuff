@@ -224,6 +224,6 @@ a:hover {
 }
 
 .scroll {
-  height: 800px;
+  max-height: 48vh;
   overflow-y: auto;
 }
