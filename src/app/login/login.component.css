@@ -4,6 +4,7 @@
 
 .list-group-item {
   border: 0;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .vertical-center {
@@ -17,6 +18,7 @@
 .list-group {
   width: 60vh;
   max-width: 600px;
+  background: rgba(201, 201, 201, 0.274);
 }
 
 fa-icon {
