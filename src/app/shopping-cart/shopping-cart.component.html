@@ -7,7 +7,7 @@
             <div class="col">
               <h4><b>Shopping Cart</b></h4>
             </div>
-            <div class="col align-self-center text-right text-muted"><button class="btn-secondary" (click)="clearCart()">Clear Cart</button> {{ cart.totalItemsCount }} items</div>
+            <div class="col align-self-center text-right text-muted"><button *ngIf="cart.items.length > 0" class="btn-secondary" (click)="clearCart()">Clear Cart</button> {{ cart.totalItemsCount }} items</div>
           </div>
         </div>
         <div class="scroll">
@@ -52,7 +52,7 @@
           <div class="col">TOTAL PRICE</div>
           <div class="col text-right">{{ cart.totalPrice | currency: "EUR" }}</div>
         </div>
-        <button class="btn" routerLink="/checkout">CHECKOUT</button>
+        <button *ngIf="cart.items.length > 0" class="btn" routerLink="/checkout">CHECKOUT</button>
       </div>
     </div>
   </ng-container>
