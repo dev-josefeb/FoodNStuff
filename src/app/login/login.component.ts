@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { faGoogle, faGithub, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +9,12 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  faGithub = faGithub;
+  faFacebook = faFacebook;
+  faTwitter = faTwitter;
+  faGoogle = faGoogle;
+  faMailBulk = faMailBulk;
+
   constructor(private auth: AuthService) {}
 
   login() {

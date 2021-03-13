@@ -40,6 +40,11 @@ export class ShoppingCartService {
     this.db.object('/shopping-carts/' + cartId + '/items').remove();
   }
 
+  async clearProductFromCart(product: AppProduct) {
+    const cartId = await this.getOrCreateCartId();
+    this.db.object('/shopping-carts/' + cartId + '/items/' + product.key).remove();
+  }
+
   private create() {
     return this.db.list('/shopping-carts').push({
       dateCreated: new Date().getTime(),
@@ -74,6 +79,7 @@ export class ShoppingCartService {
           item.update({
             title: product.title,
             imageUrl: product.imageUrl,
+            category: product.category,
             price: product.price,
             quantity: quantity,
           });

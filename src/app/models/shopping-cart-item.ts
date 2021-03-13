@@ -1,6 +1,7 @@
 export class ShoppingCartItem {
   key: string;
   title: string;
+  category: string;
   imageUrl: string;
   price: number;
   quantity: number;

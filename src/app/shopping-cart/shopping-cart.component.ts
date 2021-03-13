@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ShoppingCart } from '../models/shopping-cart';
 import { ShoppingCartService } from '../shopping-cart.service';
+import { AppProduct } from '../models/app-product';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -35,5 +36,17 @@ export class ShoppingCartComponent implements OnInit {
 
   identify(index, item) {
     return item.title;
+  }
+
+  addToCart(product: AppProduct) {
+    this.cartService.addToCart(product);
+  }
+
+  removeFromCart(product: AppProduct) {
+    this.cartService.removeFromCart(product);
+  }
+
+  removeItemFromCart(product: AppProduct) {
+    this.cartService.clearProductFromCart(product);
   }
 }

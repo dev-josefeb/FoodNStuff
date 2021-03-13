@@ -1,0 +1,41 @@
+.container {
+  max-width: 600px;
+}
+
+.list-group-item {
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.vertical-center {
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.list-group {
+  width: 60vh;
+  max-width: 600px;
+  background: rgba(201, 201, 201, 0.274);
+}
+
+fa-icon {
+  padding-left: 30px;
+}
+
+.btn-social {
+  padding-left: 70px;
+}
+
+.btn-social > :first-child {
+  border-right: none !important;
+}
+
+.card {
+  padding: 10vh 5vh;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1rem;
+  border: transparent;
+}

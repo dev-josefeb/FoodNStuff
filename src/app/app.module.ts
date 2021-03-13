@@ -44,6 +44,8 @@ import { ProductService } from './product.service';
 import { ShoppingCartService } from './shopping-cart.service';
 import { CategoriesDisplayComponent } from './home/categories-display/categories-display.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,6 +73,7 @@ import { CategoriesDisplayComponent } from './home/categories-display/categories
     BrowserAnimationsModule,
     FormsModule,
     MatTableModule,
+    FontAwesomeModule,
 
     NgbModule,
     MatPaginatorModule,
@@ -96,6 +99,7 @@ import { CategoriesDisplayComponent } from './home/categories-display/categories
       { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthguardService, AdminAuthGuardService] },
       { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthguardService, AdminAuthGuardService] },
     ]),
+    FontAwesomeModule,
   ],
   providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService, ShoppingCartService],
   bootstrap: [AppComponent],
