@@ -30,3 +30,10 @@ fa-icon {
 .btn-social > :first-child {
   border-right: none !important;
 }
+
+.card {
+  padding: 10vh 5vh;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1rem;
+  border: transparent;
+}
