@@ -48,12 +48,6 @@ body {
   }
 }
 
-@media (min-width: 767px) {
-  .cart {
-    /* padding: 1vh; */
-  }
-}
-
 .summary {
   background-color: #ddd;
   border-top-right-radius: 1rem;
