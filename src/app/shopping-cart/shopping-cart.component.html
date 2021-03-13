@@ -32,5 +32,8 @@
         </div>
       </div>
     </div>
+    <div class="text-center">
+      <button routerLink="/checkout" *ngIf="cart.items.length" class="btn btn-primary">Checkout</button>
+    </div>
   </ng-container>
 </div>
