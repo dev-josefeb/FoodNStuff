@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit {
   constructor(private productService: ProductService, private route: ActivatedRoute, private cartService: ShoppingCartService) {}
 
   async ngOnInit() {
-    this.screenWidth = window.innerHeight;
+    this.screenWidth = window.innerWidth;
     this.cart$ = await this.cartService.getCart();
     this.populateProducts();
   }
