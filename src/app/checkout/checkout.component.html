@@ -77,7 +77,7 @@
               <label for="country" class="form-label">Country</label>
               <select class="custom-select" id="country" required>
                 <option value="">Choose...</option>
-                <option>Spain</option>
+                <option *ngFor="let country of countries">{{ country }}</option>
               </select>
               <div class="invalid-feedback">Please select a valid country.</div>
             </div>

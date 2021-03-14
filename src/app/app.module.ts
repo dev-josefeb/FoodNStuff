@@ -9,12 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -34,6 +36,7 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
 import { CategoryCardComponent } from './home/category-card/category-card.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { TestimonialsComponent } from './home/testimonials/testimonials.component';
+import { CategoriesDisplayComponent } from './home/categories-display/categories-display.component';
 
 import { AuthService } from './auth.service';
 import { AuthguardService } from './authguard.service';
@@ -42,9 +45,7 @@ import { AdminAuthGuardService } from './admin-auth-guard.service';
 import { CategoryService } from './category.service';
 import { ProductService } from './product.service';
 import { ShoppingCartService } from './shopping-cart.service';
-import { CategoriesDisplayComponent } from './home/categories-display/categories-display.component';
-
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CountryService } from './country.service';
 
 @NgModule({
   declarations: [
@@ -100,8 +101,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
       { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthguardService, AdminAuthGuardService] },
     ]),
     FontAwesomeModule,
+    HttpClientModule,
   ],
-  providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService, ShoppingCartService],
+  providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService, ShoppingCartService, CountryService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
