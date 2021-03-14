@@ -76,6 +76,7 @@ body {
   font-size: 1rem;
   line-height: 1rem;
   border-radius: 10px;
+  margin-bottom: 0.6rem;
 }
 
 .title b {
@@ -238,3 +239,4 @@ a:hover {
   background-color: rgba(255, 73, 41, 0.726);
   color: white;
 }
+
