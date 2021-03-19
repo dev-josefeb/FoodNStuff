@@ -5,6 +5,7 @@ import { CountryService } from '../country.service';
 import { OrderService } from '../order.service';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth.service';
+import { Order } from '../models/order';
 
 @Component({
   selector: 'app-checkout',
@@ -32,25 +33,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   }
 
   placeOrder() {
-    console.log(this.billing);
-
-    let order = {
-      userId: this.userId,
-      datePlaced: new Date().getTime(),
-      billing: this.billing,
-      items: this.cart.items.map((i) => {
-        return {
-          product: {
-            title: i.title,
-            imageUrl: i.imageUrl,
-            price: i.price,
-          },
-          quantity: i.quantity,
-          totalPrice: i.totalPrice,
-        };
-      }),
-    };
-
+    let order = new Order(this.userId, this.billing, this.cart);
     this.orderService.storeOrder(order);
   }
 
