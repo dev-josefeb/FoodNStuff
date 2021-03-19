@@ -46,6 +46,7 @@ import { CategoryService } from './category.service';
 import { ProductService } from './product.service';
 import { ShoppingCartService } from './shopping-cart.service';
 import { CountryService } from './country.service';
+import { OrderService } from './order.service';
 
 @NgModule({
   declarations: [
@@ -103,7 +104,7 @@ import { CountryService } from './country.service';
     FontAwesomeModule,
     HttpClientModule,
   ],
-  providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService, ShoppingCartService, CountryService],
+  providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService, ShoppingCartService, CountryService, OrderService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
