@@ -12,6 +12,7 @@ import { CountryService } from '../country.service';
 export class CheckoutComponent implements OnInit {
   cart$: Observable<ShoppingCart>;
   countries: string[] = [];
+  billing = {};
 
   constructor(private cartService: ShoppingCartService, private countryService: CountryService) {}
 
@@ -20,5 +21,9 @@ export class CheckoutComponent implements OnInit {
     this.countryService.getAll().subscribe((data) => {
       for (let item of data) this.countries.push(item.name);
     });
+  }
+
+  placeOrder() {
+    console.log(this.billing);
   }
 }
