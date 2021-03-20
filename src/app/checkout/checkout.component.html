@@ -157,7 +157,7 @@
 
           <hr class="my-4" />
 
-          <button [disabled]="!billingForm.isValid" (click)="placeOrder()" class="w-100 btn btn-primary btn-lg" type="submit">Submit Order</button>
+          <button [disabled]="!billingForm.valid" (click)="placeOrder()" class="w-100 btn btn-primary btn-lg" type="submit">Submit Order</button>
         </form>
       </div>
     </div>
