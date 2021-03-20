@@ -6,7 +6,7 @@
         <th scope="col">Customer</th>
         <th scope="col">Name</th>
         <th scope="col">Date Placed</th>
-        <th scope="col"></th>
+        <th scope="col">Order ID</th>
       </tr>
     </thead>
     <tbody *ngFor="let order of orders; let i = index">
@@ -16,7 +16,7 @@
         <td>{{ order.billing.email }}</td>
         <td>{{ order.datePlaced | date: "medium" }}</td>
         <td>
-          <a [routerLink]="['/order-success/', order.key]"> {{ order.key }} </a>
+          <a [routerLink]="['/order-success/', order.key]"> {{ order.generatedId || "View" }} </a>
         </td>
       </tr>
     </tbody>
