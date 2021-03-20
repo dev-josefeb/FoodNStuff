@@ -92,14 +92,14 @@
               <div class="row">
                 <div class="col-4"></div>
                 <div class="col-4"></div>
-                <div class="col">Total</div>
-                <div class="col text-right">{{ order.finalPrice | currency: "EUR" }}</div>
+                <div class="col h6">Total</div>
+                <div class="col text-right h6">{{ order.finalPrice | currency: "EUR" }}</div>
               </div>
             </li>
           </ul>
           <div class="col-md-12 py-3">
             <div class="d-flex flex-column align-items">
-              <b>Shipping Address</b>
+              <p class="h6">Shipping Address</p>
               <p class="text-justify">{{ order.billing.firstName + " " + order.billing.lastName }}, {{ order.billing.address + ",\n" + order.billing.address2 }}</p>
               <p class="text-justify">{{ order.billing.city + ", " }} {{ order.billing.country + " " }} {{ order.billing.zip }}</p>
             </div>

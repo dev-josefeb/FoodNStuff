@@ -73,7 +73,7 @@ body {
 #progressbar .step0:before {
   font-family: FontAwesome;
   /* content: "\f10c"; */
-  content: "☐";
+  content: "🗸";
   color: #fff;
 }
 
