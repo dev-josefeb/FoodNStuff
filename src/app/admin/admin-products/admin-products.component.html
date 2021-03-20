@@ -8,7 +8,10 @@
       <ng-container matColumnDef="imageUrl">
         <div>
           <th mat-header-cell *matHeaderCellDef>Product Image</th>
-          <td mat-cell *matCellDef="let product of products"><img [src]="[product.imageUrl]" /></td>
+          <td mat-cell *matCellDef="let product of products">
+            <img *ngIf="imageLoading" src="/assets/loadingImages/image_loading.gif" alt="loading" />
+            <img [hidden]="imageLoading" (load)="onLoad()" [src]="[product.imageUrl]" />
+          </td>
         </div>
       </ng-container>
 
