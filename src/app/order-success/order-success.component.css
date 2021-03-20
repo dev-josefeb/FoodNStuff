@@ -44,7 +44,6 @@ body {
   background-color: #eceff1;
   padding-bottom: 20px;
   margin-top: 20px;
-  /* margin-bottom: 90px; */
   border-radius: 10px;
 }
 
@@ -84,7 +83,7 @@ body {
   line-height: 45px;
   display: block;
   font-size: 20px;
-  background: #c5cae9;
+  background: #c5e9d0;
   border-radius: 50%;
   margin: auto;
   padding: 0px;
@@ -94,7 +93,7 @@ body {
   content: "";
   width: 100%;
   height: 12px;
-  background: #c5cae9;
+  background: #c5e9d0;
   position: absolute;
   left: 0;
   top: 16px;
@@ -133,7 +132,7 @@ body {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-  background: #295ba5;
+  background: #24df88;
 }
 
 #progressbar li.active:before {
