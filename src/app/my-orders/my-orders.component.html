@@ -1,6 +1,9 @@
 <div class="container" *ngIf="orders$ | async as orders">
-  <table class="table table-striped">
-    <thead>
+  <h1>My Orders</h1>
+
+  <h3>Thank you for your orders. For shipping information or a detailed summary about a specific order navigate to the order summary page using the order link in the table.</h3>
+  <table class="mat-elevation-z8 table table-borderless table-hover table-striped">
+    <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Customer</th>
@@ -9,8 +12,8 @@
         <th scope="col">Order ID</th>
       </tr>
     </thead>
-    <tbody *ngFor="let order of orders; let i = index">
-      <tr>
+    <tbody>
+      <tr *ngFor="let order of orders; let i = index">
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ order.billing.firstName + " " + order.billing.lastName }}</td>
         <td>{{ order.billing.email }}</td>
