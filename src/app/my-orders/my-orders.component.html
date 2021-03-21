@@ -1,1 +1,24 @@
-<p>my-orders works!</p>
+<div class="container" *ngIf="orders$ | async as orders">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Customer</th>
+        <th scope="col">Name</th>
+        <th scope="col">Date Placed</th>
+        <th scope="col">Order ID</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let order of orders; let i = index">
+      <tr>
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ order.billing.firstName + " " + order.billing.lastName }}</td>
+        <td>{{ order.billing.email }}</td>
+        <td>{{ order.datePlaced | date: "medium" }}</td>
+        <td>
+          <a [routerLink]="['/order-success/', order.key]"> {{ order.generatedId || "View" }} </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

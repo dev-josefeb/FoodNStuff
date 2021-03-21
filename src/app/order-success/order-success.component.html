@@ -1,1 +1,226 @@
-<p>order-success works!</p>
+<div *ngIf="order" class="container container-top px-1 px-md-4 py-5 mx-auto">
+  <div class="row g-3">
+    <div class="col-12">
+      <div class="card">
+        <div class="row d-flex justify-content-between px-3 top">
+          <div class="d-flex">
+            <h5>
+              ORDER ID: <span class="text-secondary">{{ order.generatedId }}</span>
+            </h5>
+          </div>
+          <div class="d-flex flex-column text-sm-right">
+            <p class="mb-0">
+              Expected Arrival: <span class="text-secondary">{{ order.datePlaced + 2 * 24 * 60 * 60 * 1000 | date }}</span>
+            </p>
+          </div>
+        </div>
+        <!-- Add class 'active' to progress -->
+        <div class="row d-flex justify-content-center">
+          <div class="col-12">
+            <ul id="progressbar" class="text-center">
+              <li class="active step0"></li>
+              <li class="active step0"></li>
+              <li class="step0"></li>
+              <li class="step0"></li>
+              <li class="step0"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row justify-content-between top">
+          <div class="row d-flex icon-content">
+            <img class="icon" src="https://i.imgur.com/9nnc9Et.png" />
+            <div class="d-flex flex-column">
+              <p class="font-weight-bold"><br />Recieved</p>
+            </div>
+          </div>
+          <div class="row d-flex icon-content">
+            <img class="icon" src="https://i.imgur.com/GiWFtVu.png" />
+            <div class="d-flex flex-column">
+              <p class="font-weight-bold"><br />Processed</p>
+            </div>
+          </div>
+          <div class="row d-flex icon-content">
+            <img class="icon" src="https://i.imgur.com/u1AzR7w.png" />
+            <div class="d-flex flex-column">
+              <p class="font-weight-bold"><br />Shipped</p>
+            </div>
+          </div>
+          <div class="row d-flex icon-content">
+            <img class="icon" src="https://i.imgur.com/TkPm63y.png" />
+            <div class="d-flex flex-column">
+              <p class="font-weight-bold"><br />En Route</p>
+            </div>
+          </div>
+          <div class="row d-flex icon-content">
+            <img class="icon" src="https://i.imgur.com/HdsziHP.png" />
+            <div class="d-flex flex-column">
+              <p class="font-weight-bold"><br />Arrived</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container px-1 px-md-4 py-5 mx-auto">
+  <div class="row g-3">
+    <div class="col-md-7 col-lg-7">
+      <div class="card">
+        <div class="d-flex flex-column justify-content-center align-items-center" id="order-heading">
+          <h1>Purchase Details</h1>
+        </div>
+        <div class="wrapper bg-white">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-8">Product</div>
+                <div class="col text-right">Quantity</div>
+                <div class="col text-right">Total</div>
+              </div>
+            </li>
+
+            <li *ngFor="let item of order.items" class="list-group-item">
+              <div class="row">
+                <div class="col-8 align-self-center"><img [src]="[item.product.imageUrl]" class="rounded-circle" width="60" height="60" />{{ item.product.title }}</div>
+                <div class="col text-right align-self-center">{{ item.quantity }} x {{ item.product.price | currency: "EUR" }}</div>
+                <div class="col text-right align-self-center">{{ item.totalPrice | currency: "EUR" }}</div>
+              </div>
+            </li>
+
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+                <div class="col h6">Total</div>
+                <div class="col text-right h6">{{ order.finalPrice | currency: "EUR" }}</div>
+              </div>
+            </li>
+          </ul>
+          <div class="col-md-12 py-3">
+            <div class="d-flex flex-column align-items">
+              <p class="h6">Shipping Address</p>
+              <p class="text-justify">{{ order.billing.firstName + " " + order.billing.lastName }}, {{ order.billing.address + ",\n" + order.billing.address2 }}</p>
+              <p class="text-justify">{{ order.billing.city + ", " }} {{ order.billing.country + " " }} {{ order.billing.zip }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5 col-lg-5 order-md-last">
+      <div class="card">
+        <div class="d-flex flex-column justify-content-center align-items-center" id="order-heading">
+          <h1>Order Details</h1>
+        </div>
+        <div class="wrapper bg-white">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Order ID</div>
+                <div class="col text-right">#{{ order.generatedId }}</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Date</div>
+                <div *ngIf="order" class="col-8 text-right">{{ order.datePlaced | date: "medium" }}</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="d-flex flex-column justify-content-center align-items-center" id="order-heading">
+          <h1>Payment Details</h1>
+        </div>
+        <div class="wrapper bg-white">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Name</div>
+                <div class="col text-right">{{ order.billing.firstName + " " + order.billing.lastName }}</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Email</div>
+                <div class="col-8 text-right">{{ order.billing.email }}</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Address</div>
+                <div class="col text-right">{{ order.billing.address + ",\n" + order.billing.address2 }}</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">City</div>
+                <div class="col text-right">{{ order.billing.city }}</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Country</div>
+                <div class="col text-right">{{ order.billing.country }}</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Postal Code</div>
+                <div class="col text-right">{{ order.billing.zip }}</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Payment</div>
+                <div class="col text-right">{{ order.billing.cardNumber }}</div>
+              </div>
+            </li>
+          </ul>
+
+          <!-- <div class="d-flex justify-content-start align-items-center py-1 pl-3">
+            <div class="text-muted">Shipping</div>
+            <div class="ml-auto"><label>Free</label></div>
+          </div> -->
+          <!-- <div class="d-flex justify-content-start align-items-center pb-4 pl-3 border-bottom">
+            <div class="text-muted"><button class="text-black btn">50% Discount</button></div>
+            <div class="ml-auto price">-$34.94</div>
+          </div> -->
+          <div class="d-flex justify-content-start align-items-center pl-3 py-3 mb-4 border-bottom">
+            <div class="text-muted">Today's Total</div>
+            <div class="ml-auto h5">{{ order.finalPrice | currency: "EUR" }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="d-flex flex-column justify-content-center align-items-center" id="order-heading">
+          <h1>Cancellation Policy</h1>
+        </div>
+        <div class="wrapper bg-white">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">Order ID</div>
+                <div class="col text-right">#{{ order.generatedId }}</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus omnis rerum voluptatem officia animi ea, pariatur provident corporis officiis quis asperiores quam fugit inventore cum adipisci sapiente nisi illo debitis itaque explicabo error ullam.
+                  Repellendus deleniti illo nulla optio similique cupiditate libero in voluptatem. Molestias natus possimus amet, deleniti recusandae libero nam ipsa nihil voluptatum quibusdam aspernatur necessitatibus ipsam. Tenetur, earum nostrum! Eum laudantium quidem neque
+                  soluta incidunt quis explicabo facilis earum, fugit sequi ipsum tempora sint omnis aspernatur natus ad cum facere! Nesciunt suscipit blanditiis esse asperiores cum ex, molestiae expedita quod? Et culpa eligendi iure repudiandae fugiat consequuntur.
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

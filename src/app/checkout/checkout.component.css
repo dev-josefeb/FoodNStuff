@@ -9,3 +9,12 @@
 .form-label {
   margin-top: 20px;
 }
+
+.bg-secondary{
+  color: white;
+  padding: 0.5rem;
+}
+
+.list-group-item{
+  font-size: larger;
+}

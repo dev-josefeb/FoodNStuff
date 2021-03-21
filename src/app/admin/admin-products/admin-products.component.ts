@@ -16,6 +16,7 @@ export class AdminProductsComponent implements OnDestroy, AfterViewInit {
   subscription: Subscription;
   displayedColumns: string[] = ['imageUrl', 'title', 'category', 'price', 'actions'];
   dataSource = new MatTableDataSource<AppProduct>();
+  imageLoading: boolean = true;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -33,6 +34,10 @@ export class AdminProductsComponent implements OnDestroy, AfterViewInit {
 
   filter(query: string) {
     this.dataSource.data = query ? this.products.filter((p: AppProduct) => p.title.toLowerCase().includes(query.toLowerCase())) : this.products;
+  }
+
+  onLoad() {
+    this.imageLoading = false;
   }
 
   ngOnDestroy() {
