@@ -16,6 +16,7 @@ import { AppCategory } from '../../models/app-category';
 })
 export class ProductFilterComponent {
   @Input('category') category;
+  @Input('is-horizontal') isHorizontal;
   categories: AppCategory[];
 
   constructor(private categoryService: CategoryService) {

@@ -1,14 +1,16 @@
 <div class="my-container">
+  <div class="horizontal-scrollable hide-scrollbar sticky-top">
+    <div *ngIf="screenWidth < 1200" class="row">
+      <product-filter [is-horizontal]="true" [category]="category"></product-filter>
+    </div>
+  </div>
+
   <div class="row">
-    <div class="col-2">
+    <div *ngIf="screenWidth >= 1200" class="col-2">
       <product-filter [category]="category"></product-filter>
     </div>
-
     <div class="col">
-      <!-- <div class="row">
-        <product-filter [category]="category"></product-filter>
-      </div> -->
-      <div *ngIf="cart$ | async as cart" class="row row-cols-auto">
+      <div *ngIf="cart$ | async as cart" class="mt-top row row-cols-auto">
         <ng-container *ngFor="let product of filteredProducts; let i = index">
           <div [class.col-xl-2]="screenWidth > breakpointXL" [class.col-xl-3]="screenWidth < breakpointXL" class="col-xs-12 col-sm-6 col-lg-4">
             <product-card [product]="product" [shopping-cart]="cart"></product-card>

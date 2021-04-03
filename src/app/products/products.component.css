@@ -10,3 +10,20 @@
   margin-left: 1rem;
   margin-top: 75px;
 }
+
+.horizontal-scrollable > .row {
+  white-space: nowrap;
+}
+
+.horizontal-scrollable {
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.sticky-top {
+  top: 80px;
+}
