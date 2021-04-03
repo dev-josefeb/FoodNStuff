@@ -24,6 +24,11 @@
   display: none;
 }
 
+.scrollhide {
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox */
+}
+
 .sticky-top {
   top: 80px;
 }
