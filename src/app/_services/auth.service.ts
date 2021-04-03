@@ -18,12 +18,12 @@ export class AuthService {
     this.user$ = fireAuth.authState;
   }
 
-  login() {
+  login(authprovider: firebase.auth.AuthProvider) {
     let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
     console.log(returnUrl);
     localStorage.setItem('returnUrl', returnUrl);
 
-    this.fireAuth.signInWithRedirect(new firebase.auth.GoogleAuthProvider()).then();
+    this.fireAuth.signInWithPopup(authprovider).then();
   }
 
   logout() {

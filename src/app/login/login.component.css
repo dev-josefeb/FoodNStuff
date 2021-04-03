@@ -22,6 +22,8 @@
 }
 
 fa-icon {
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 30px;
 }
 
@@ -38,4 +40,13 @@ fa-icon {
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 1rem;
   border: transparent;
+}
+
+button {
+  padding: 10px;
+}
+
+.btn-primary:disabled {
+  background-color: transparent;
+  border-color: transparent;
 }

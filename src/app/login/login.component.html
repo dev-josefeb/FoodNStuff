@@ -1,21 +1,21 @@
 <div class="container justify-content-center vertical-center">
   <ul class="list-group mb-3 card">
-    <h1 class="text-center">Sign in Using The Following Providers</h1>
+    <h1 class="text-center">Please sign in or sign up to continue</h1>
 
     <li class="list-group-item">
-      <button (click)="login()" class="btn btn-primary btn-social btn-google btn-block"><fa-icon [icon]="faGoogle"></fa-icon>Sign in with Google</button>
+      <button (click)="login(authGoogle)" class="btn btn-primary btn-social btn-google btn-block"><fa-icon [icon]="faGoogle"></fa-icon>Sign in with Google</button>
     </li>
     <li class="list-group-item">
-      <button class="btn btn-primary btn-social btn-facebook btn-block"><fa-icon [icon]="faFacebook"></fa-icon>Sign in with Facebook</button>
+      <button (click)="login(authGitHub)" class="btn btn-primary btn-social btn-github btn-block"><fa-icon [icon]="faGithub"></fa-icon>Sign in with Github</button>
     </li>
     <li class="list-group-item">
-      <button class="btn btn-primary btn-social btn-github btn-block"><fa-icon [icon]="faGithub"></fa-icon>Sign in with Github</button>
+      <button disabled class="btn btn-social btn-facebook btn-block"><fa-icon [icon]="faFacebook"></fa-icon>Sign in with Facebook</button>
     </li>
     <li class="list-group-item">
-      <button class="btn btn-primary btn-social btn-twitter btn-block"><fa-icon [icon]="faTwitter"></fa-icon>Sign in with Twitter</button>
+      <button disabled class="btn btn-social btn-twitter btn-block"><fa-icon [icon]="faTwitter"></fa-icon>Sign in with Twitter</button>
     </li>
     <li class="list-group-item">
-      <button class="btn btn-primary btn-social btn-adn btn-block"><fa-icon [icon]="faMailBulk"></fa-icon>Sign in with Email</button>
+      <button disabled class="btn btn-social btn-adn btn-block"><fa-icon [icon]="faMailBulk"></fa-icon>Sign in with Email</button>
     </li>
   </ul>
 </div>
