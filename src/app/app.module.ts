@@ -38,15 +38,15 @@ import { FooterComponent } from './home/footer/footer.component';
 import { TestimonialsComponent } from './home/testimonials/testimonials.component';
 import { CategoriesDisplayComponent } from './home/categories-display/categories-display.component';
 
-import { AuthService } from './auth.service';
-import { AuthguardService } from './authguard.service';
-import { UserService } from './user.service';
-import { AdminAuthGuardService } from './admin-auth-guard.service';
-import { CategoryService } from './category.service';
-import { ProductService } from './product.service';
-import { ShoppingCartService } from './shopping-cart.service';
-import { CountryService } from './country.service';
-import { OrderService } from './order.service';
+import { AuthService } from './_services/auth.service';
+import { AuthguardService } from './_services/authguard.service';
+import { UserService } from './_services/user.service';
+import { AdminAuthGuardService } from './_services/admin-auth-guard.service';
+import { CategoryService } from './_services/category.service';
+import { ProductService } from './_services/product.service';
+import { ShoppingCartService } from './_services/shopping-cart.service';
+import { CountryService } from './_services/country.service';
+import { OrderService } from './_services/order.service';
 
 @NgModule({
   declarations: [

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { slideAnimation } from './animations';
-import { AuthService } from './auth.service';
-import { UserService } from './user.service';
+import { AuthService } from './_services/auth.service';
+import { UserService } from './_services/user.service';
 
 @Component({
   selector: 'app-root',

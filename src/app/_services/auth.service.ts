@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { AppUser } from './models/app-user';
+import { AppUser } from '../_models/app-user';
 import { switchMap } from 'rxjs/operators';
 import { UserService } from './user.service';
 import { of } from 'rxjs';

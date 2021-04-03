@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { notificationAnimation } from './navbar.component.animation';
-import { AuthService } from '../auth.service';
-import { AppUser } from '../models/app-user';
-import { ShoppingCart } from '../models/shopping-cart';
-import { ShoppingCartService } from '../shopping-cart.service';
+import { AuthService } from '../_services/auth.service';
+import { AppUser } from '../_models/app-user';
+import { ShoppingCart } from '../_models/shopping-cart';
+import { ShoppingCartService } from '../_services/shopping-cart.service';
 
 @Component({
   selector: 'navbar',

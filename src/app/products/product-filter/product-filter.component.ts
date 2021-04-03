@@ -1,8 +1,8 @@
 import { trigger, transition, query, stagger, animateChild, style, animate, useAnimation, group } from '@angular/animations';
 import { Component, Input } from '@angular/core';
 import { bounceOutLeftAnimation } from '../../animations';
-import { CategoryService } from '../../category.service';
-import { AppCategory } from '../../models/app-category';
+import { CategoryService } from '../../_services/category.service';
+import { AppCategory } from '../../_models/app-category';
 
 @Component({
   selector: 'product-filter',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CategoryService } from '../../category.service';
-import { AppCategory } from '../../models/app-category';
+import { CategoryService } from '../../_services/category.service';
+import { AppCategory } from '../../_models/app-category';
 import { trigger, transition, query, style, animate, stagger, animateChild, group, useAnimation } from '@angular/animations';
 
 @Component({
