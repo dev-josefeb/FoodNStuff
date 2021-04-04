@@ -11,7 +11,7 @@ export class ProductService {
   products$: Observable<any>;
 
   constructor(private db: AngularFireDatabase) {
-    this.products$ = this.db.list('/products').snapshotChanges();
+    this.products$ = this.db.list('/products', (ref) => ref.orderByChild('title')).snapshotChanges();
   }
 
   create(product) {
