@@ -1,6 +1,6 @@
 <div *ngIf="categories" class="sticky-top align-items-center top">
   <div @todosAnimation [class.list-group-horizontal]="isHorizontal" class="list-group">
-    <a *ngIf="categories" class="list-group-item list-group-item-action" routerLink="/products" [class.active]="!category"> <img src="https://img.icons8.com/carbon-copy/100/000000/category.png" /> All Categories</a>
+    <a *ngIf="categories" class="list-group-item list-group-item-action" routerLink="/products" [class.active]="!category"> <img src="https://img.icons8.com/color/50/000000/medium-priority.png" /> All Categories</a>
     <a @todoAnimation *ngFor="let c of categories" routerLink="/products" [queryParams]="{ category: c.key }" class="list-group-item list-group-item-action" [class.active]="category === c.key"> <img [src]="c.iconUrl" />{{ c.name }}</a>
   </div>
 </div>
