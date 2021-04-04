@@ -10,6 +10,8 @@ import firebase from 'firebase';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  isSignup = false;
+
   faGithub = faGithub;
   faFacebook = faFacebook;
   faTwitter = faTwitter;
