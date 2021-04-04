@@ -17,6 +17,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -76,6 +77,7 @@ import { OrderService } from './_services/order.service';
     FormsModule,
     MatTableModule,
     FontAwesomeModule,
+    ToastrModule.forRoot({ positionClass: 'toast-bottom-right' }),
 
     NgbModule,
     MatPaginatorModule,

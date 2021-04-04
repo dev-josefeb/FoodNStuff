@@ -16,3 +16,13 @@ body {
   padding-right: 0px;
   padding-left: 0px;
 }
+
+.toast-error {
+  border-radius: 40px !important;
+  background-color: #b6260dbb !important;
+}
+
+.toast-success {
+  border-radius: 40px !important;
+  background-color: #1bb60dbb !important;
+}
