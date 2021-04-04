@@ -22,12 +22,7 @@
 
     <ng-template #anonymousUser>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sign In </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" (click)="login()">Google Login</a>
-          <a class="dropdown-item disabled" href="#">Facebook Login</a>
-          <a class="dropdown-item disabled" href="#">Email Login</a>
-        </div>
+        <a class="nav-link" routerLink="/login" aria-haspopup="true" aria-expanded="false"> Sign In </a>
       </li>
     </ng-template>
 
