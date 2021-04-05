@@ -24,24 +24,37 @@
             <p class="social-text text-muted">Google Github Facebook Email</p>
           </div>
         </form>
-        <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm.value)" class="sign-up-form">
+        <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)" class="sign-up-form">
           <h2 class="title">Sign up</h2>
-          <div class="input-field" [class.is-invalid]="fullName.touched && fullName.invalid">
+
+          <div class="input-field" [class.is-invalid]="registerForm.controls['fullName'].touched && registerForm.controls['fullName'].errors?.required">
             <i class="fa fa-user"></i>
-            <input required #fullName="ngModel" [(ngModel)]="user.fullName" name="fullName" type="text" placeholder="Full Name" autocomplete="off" />
+            <input [formControl]="registerForm.controls['fullName']" name="fullName" type="text" placeholder="Full Name" autocomplete="off" />
           </div>
-          <div class="input-field" [class.is-invalid]="email.touched && email.invalid">
+          <div class="alert-danger" *ngIf="registerForm.controls['fullName'].touched && registerForm.controls['fullName'].errors?.required">Please enter your full name</div>
+
+          <div class="input-field" [class.is-invalid]="registerForm.controls['email'].touched && registerForm.controls['email'].errors?.required">
             <i class="fa fa-envelope"></i>
-            <input required #email="ngModel" [(ngModel)]="user.email" required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" name="email" type="email" placeholder="Email" autocomplete="off" />
+            <input [formControl]="registerForm.controls['email']" required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" name="email" type="email" placeholder="Email" autocomplete="off" />
           </div>
-          <div class="input-field" [class.is-invalid]="password.touched && password.invalid">
+          <div class="text-left alert-danger" *ngIf="registerForm.controls['email'].touched && registerForm.controls['email'].errors?.required">Please enter your email</div>
+          <div class="text-left alert-danger" *ngIf="registerForm.controls['email'].touched && registerForm.controls['email'].errors?.email">Please enter a valid email</div>
+
+          <div class="input-field" [class.is-invalid]="registerForm.controls['password'].touched && registerForm.controls['password'].errors?.required">
             <i class="fa fa-lock"></i>
-            <input required #password="ngModel" [(ngModel)]="user.password" name="password" type="password" placeholder="Password" />
+            <input [formControl]="registerForm.controls['password']" name="password" type="password" placeholder="Password" />
           </div>
-          <div class="input-field" [class.is-invalid]="confirmPassword.touched && confirmPassword.invalid">
+          <div class="alert-danger" *ngIf="registerForm.controls['password'].touched && registerForm.controls['password'].errors?.required">Please enter a password</div>
+          <div class="alert-danger" *ngIf="registerForm.controls['password'].touched && registerForm.controls['password'].errors?.minlength">Password has to be at least 4 characters</div>
+          <div class="alert-danger" *ngIf="registerForm.controls['password'].touched && registerForm.controls['password'].errors?.maxlength">Password can be be atmost 15 characters</div>
+
+          <div class="input-field" [class.is-invalid]="registerForm.controls['confirmPassword'].touched && registerForm.controls['confirmPassword'].errors?.required">
             <i class="fa fa-lock"></i>
-            <input required #confirmPassword="ngModel" [(ngModel)]="user.confirmPassword" name="confirmPassword" type="password" placeholder="Confirm Password" />
+            <input [formControl]="registerForm.controls['confirmPassword']" name="confirmPassword" type="password" placeholder="Confirm Password" />
           </div>
+          <div class="alert-danger" *ngIf="registerForm.controls['confirmPassword'].touched && registerForm.controls['confirmPassword'].errors?.required">Please confirm your password</div>
+          <div class="alert-danger" *ngIf="registerForm.controls['confirmPassword'].touched && registerForm.controls['confirmPassword'].errors?.isMatching">Passwords do not match</div>
+
           <input [disabled]="!registerForm.valid" type="submit" class="btn" value="Sign up" />
         </form>
       </div>

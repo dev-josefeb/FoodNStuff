@@ -8,7 +8,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatTableModule } from '@angular/material/table';
@@ -109,6 +109,7 @@ import { OrderService } from './_services/order.service';
     ]),
     FontAwesomeModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService, ShoppingCartService, CountryService, OrderService, MatDatepickerModule],
   bootstrap: [AppComponent],
