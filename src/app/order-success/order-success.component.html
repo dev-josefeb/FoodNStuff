@@ -63,7 +63,7 @@
   </div>
 </div>
 
-<div class="container px-1 px-md-4 py-5 mx-auto">
+<div *ngIf="order" class="container px-1 px-md-4 py-5 mx-auto">
   <div class="row g-3">
     <div class="col-md-7 col-lg-7">
       <div class="card">
@@ -79,7 +79,6 @@
                 <div class="col text-right">Total</div>
               </div>
             </li>
-
             <li *ngFor="let item of order.items" class="list-group-item">
               <div class="row">
                 <div class="col-8 align-self-center"><img [src]="[item.product.imageUrl]" class="rounded-circle" width="60" height="60" />{{ item.product.title }}</div>
@@ -123,7 +122,7 @@
             <li class="list-group-item">
               <div class="row">
                 <div class="col">Date</div>
-                <div *ngIf="order" class="col-8 text-right">{{ order.datePlaced | date: "medium" }}</div>
+                <div class="col-8 text-right">{{ order.datePlaced | date: "medium" }}</div>
               </div>
             </li>
           </ul>

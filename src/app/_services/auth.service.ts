@@ -61,7 +61,11 @@ export class AuthService {
         .createUserWithEmailAndPassword(value.email, value.password)
         .then(
           (res) => {
+            const user = firebase.auth().currentUser;
             resolve(res);
+            return user.updateProfile({
+              displayName: value.fullName,
+            });
           },
           (err) => reject(err)
         );

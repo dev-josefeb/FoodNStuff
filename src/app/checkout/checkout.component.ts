@@ -7,6 +7,8 @@ import { Subscription } from 'rxjs';
 import { AuthService } from '../_services/auth.service';
 import { Order } from '../_models/order';
 import { Router } from '@angular/router';
+import firebase from 'firebase';
+import { Billing } from '../_models/billing';
 
 @Component({
   selector: 'app-checkout',
@@ -14,7 +16,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./checkout.component.css'],
 })
 export class CheckoutComponent implements OnInit, OnDestroy {
-  billing = {};
+  billing: Billing = { firstName: '', lastName: '', email: '', address: '', address2: '', cardName: '', cardNumber: '', cardExpiry: '', cardCvv: '', sameShippingAddress: false, country: '', city: '', zip: '' };
   cart: ShoppingCart;
   countries: string[] = [];
   userId: string;
@@ -26,7 +28,11 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     let cart$ = await this.cartService.getCart();
     this.cartSubscription = cart$.subscribe((cart) => (this.cart = cart));
-    this.userSubscription = this.authService.user$.subscribe((user) => (this.userId = user.uid));
+
+    this.userSubscription = this.authService.user$.subscribe((user) => {
+      this.userId = user.uid;
+      this.setUserDetails(user);
+    });
 
     this.countryService.getAll().subscribe((data) => {
       for (let item of data) this.countries.push(item.name);
@@ -42,5 +48,13 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.cartSubscription.unsubscribe();
     this.userSubscription.unsubscribe();
+  }
+
+  private setUserDetails(user: firebase.User) {
+    this.billing.email = user.email;
+
+    if (!user.displayName) return;
+    this.billing.firstName = user.displayName.split(' ')[0];
+    this.billing.lastName = user.displayName.split(' ')[1];
   }
 }
