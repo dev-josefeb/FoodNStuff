@@ -44,4 +44,8 @@ export class OrderService {
         })
       );
   }
+
+  deleteOrder(orderId: string) {
+    return this.db.object('/orders/' + orderId).remove();
+  }
 }

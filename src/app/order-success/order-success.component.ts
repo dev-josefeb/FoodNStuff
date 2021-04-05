@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Order } from '../models/order';
-import { OrderService } from '../order.service';
+import { Order } from '../_models/order';
+import { OrderService } from '../_services/order.service';
 
 @Component({
   selector: 'app-order-success',

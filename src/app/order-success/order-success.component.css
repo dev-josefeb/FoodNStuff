@@ -13,7 +13,7 @@
 
 .pl-3,
 .px-3 {
-  padding-left: 2rem !important;
+  padding-left: 1.3rem !important;
 }
 
 .pl-3,
@@ -21,14 +21,22 @@
   padding-right: 2rem !important;
 }
 
-.row {
-  margin-left: 5px !important;
-  margin-right: 5px !important;
+.col-lg-12 {
+  margin-bottom: 30px;
 }
 
-h1 {
+h5 {
   margin-top: 0.5rem !important;
   margin-bottom: 0.5rem !important;
+}
+
+.text-justify {
+  margin-bottom: 0;
+}
+
+.list-group-item {
+  border-left: none;
+  border-right: none;
 }
 
 body {
@@ -44,7 +52,7 @@ body {
   background-color: #eceff1;
   padding-bottom: 20px;
   margin-top: 20px;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .top {

@@ -16,6 +16,13 @@ export class UserService {
     });
   }
 
+  saveRegisteredUser(userDetails, user: firebase.User) {
+    this.db.object('/users/' + user.uid).update({
+      name: userDetails.fullName,
+      email: userDetails.email,
+    });
+  }
+
   get(uid: string): Observable<any> {
     return this.db.object('/users/' + uid).valueChanges();
   }

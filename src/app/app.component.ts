@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { slideAnimation } from './animations';
-import { AuthService } from './auth.service';
-import { UserService } from './user.service';
+import { AuthService } from './_services/auth.service';
+import { UserService } from './_services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +16,8 @@ export class AppComponent {
   constructor(userService: UserService, auth: AuthService, router: Router) {
     auth.user$.subscribe((user) => {
       if (!user) return;
-      userService.save(user);
+
+      if (user.displayName) userService.save(user);
       let returnUrl = localStorage.getItem('returnUrl');
 
       if (!returnUrl) return;

@@ -10,3 +10,25 @@
   margin-left: 1rem;
   margin-top: 75px;
 }
+
+.horizontal-scrollable > .row {
+  white-space: nowrap;
+}
+
+.horizontal-scrollable {
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollhide {
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox */
+}
+
+.sticky-top {
+  top: 80px;
+}

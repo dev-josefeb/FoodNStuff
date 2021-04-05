@@ -63,12 +63,12 @@
   </div>
 </div>
 
-<div class="container px-1 px-md-4 py-5 mx-auto">
+<div *ngIf="order" class="container px-1 px-md-4 py-5 mx-auto">
   <div class="row g-3">
     <div class="col-md-7 col-lg-7">
       <div class="card">
         <div class="d-flex flex-column justify-content-center align-items-center" id="order-heading">
-          <h1>Purchase Details</h1>
+          <h5>Purchase Details</h5>
         </div>
         <div class="wrapper bg-white">
           <ul class="list-group">
@@ -79,7 +79,6 @@
                 <div class="col text-right">Total</div>
               </div>
             </li>
-
             <li *ngFor="let item of order.items" class="list-group-item">
               <div class="row">
                 <div class="col-8 align-self-center"><img [src]="[item.product.imageUrl]" class="rounded-circle" width="60" height="60" />{{ item.product.title }}</div>
@@ -89,10 +88,8 @@
             </li>
 
             <li class="list-group-item">
-              <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4"></div>
-                <div class="col h6">Total</div>
+              <div class="row text-right">
+                <div class="col-8 h6">Total</div>
                 <div class="col text-right h6">{{ order.finalPrice | currency: "EUR" }}</div>
               </div>
             </li>
@@ -110,7 +107,7 @@
     <div class="col-md-5 col-lg-5 order-md-last">
       <div class="card">
         <div class="d-flex flex-column justify-content-center align-items-center" id="order-heading">
-          <h1>Order Details</h1>
+          <h5>Order Details</h5>
         </div>
         <div class="wrapper bg-white">
           <ul class="list-group">
@@ -123,7 +120,7 @@
             <li class="list-group-item">
               <div class="row">
                 <div class="col">Date</div>
-                <div *ngIf="order" class="col-8 text-right">{{ order.datePlaced | date: "medium" }}</div>
+                <div class="col-8 text-right">{{ order.datePlaced | date: "medium" }}</div>
               </div>
             </li>
           </ul>
@@ -131,7 +128,7 @@
       </div>
       <div class="card">
         <div class="d-flex flex-column justify-content-center align-items-center" id="order-heading">
-          <h1>Payment Details</h1>
+          <h5>Payment Details</h5>
         </div>
         <div class="wrapper bg-white">
           <ul class="list-group">
@@ -199,7 +196,7 @@
     <div class="col-lg-12">
       <div class="card">
         <div class="d-flex flex-column justify-content-center align-items-center" id="order-heading">
-          <h1>Cancellation Policy</h1>
+          <h5>Cancellation Policy</h5>
         </div>
         <div class="wrapper bg-white">
           <ul class="list-group">

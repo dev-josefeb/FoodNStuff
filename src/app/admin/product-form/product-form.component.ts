@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CategoryService } from '../../category.service';
-import { AppCategory } from '../../models/app-category';
-import { ProductService } from '../../product.service';
+import { CategoryService } from '../../_services/category.service';
+import { AppCategory } from '../../_models/app-category';
+import { ProductService } from '../../_services/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppProduct } from '../../models/app-product';
+import { AppProduct } from '../../_models/app-product';
 
 @Component({
   selector: 'app-product-form',

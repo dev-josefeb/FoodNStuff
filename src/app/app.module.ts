@@ -8,7 +8,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatTableModule } from '@angular/material/table';
@@ -17,6 +17,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ToastrModule } from 'ngx-toastr';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -38,15 +41,15 @@ import { FooterComponent } from './home/footer/footer.component';
 import { TestimonialsComponent } from './home/testimonials/testimonials.component';
 import { CategoriesDisplayComponent } from './home/categories-display/categories-display.component';
 
-import { AuthService } from './auth.service';
-import { AuthguardService } from './authguard.service';
-import { UserService } from './user.service';
-import { AdminAuthGuardService } from './admin-auth-guard.service';
-import { CategoryService } from './category.service';
-import { ProductService } from './product.service';
-import { ShoppingCartService } from './shopping-cart.service';
-import { CountryService } from './country.service';
-import { OrderService } from './order.service';
+import { AuthService } from './_services/auth.service';
+import { AuthguardService } from './_services/authguard.service';
+import { UserService } from './_services/user.service';
+import { AdminAuthGuardService } from './_services/admin-auth-guard.service';
+import { CategoryService } from './_services/category.service';
+import { ProductService } from './_services/product.service';
+import { ShoppingCartService } from './_services/shopping-cart.service';
+import { CountryService } from './_services/country.service';
+import { OrderService } from './_services/order.service';
 
 @NgModule({
   declarations: [
@@ -76,6 +79,9 @@ import { OrderService } from './order.service';
     FormsModule,
     MatTableModule,
     FontAwesomeModule,
+    ToastrModule.forRoot({ positionClass: 'toast-bottom-right' }),
+    MatDatepickerModule,
+    MatNativeDateModule,
 
     NgbModule,
     MatPaginatorModule,
@@ -103,8 +109,9 @@ import { OrderService } from './order.service';
     ]),
     FontAwesomeModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
-  providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService, ShoppingCartService, CountryService, OrderService],
+  providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService, ShoppingCartService, CountryService, OrderService, MatDatepickerModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

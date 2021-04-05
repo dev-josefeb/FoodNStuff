@@ -2,9 +2,9 @@ import { trigger, transition, query, style, animate, stagger, animateChild, grou
 import { bounceOutLeftAnimation } from '../animations';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ShoppingCart } from '../models/shopping-cart';
-import { ShoppingCartService } from '../shopping-cart.service';
-import { AppProduct } from '../models/app-product';
+import { ShoppingCart } from '../_models/shopping-cart';
+import { ShoppingCartService } from '../_services/shopping-cart.service';
+import { AppProduct } from '../_models/app-product';
 
 @Component({
   selector: 'app-shopping-cart',

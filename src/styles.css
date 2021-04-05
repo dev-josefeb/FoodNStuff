@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~bootstrap-social/bootstrap-social.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 html,
 body {
@@ -8,11 +9,31 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  /* padding-top: 53px; */
+  font-family: "Poppins", sans-serif;
 }
 
 .row {
   padding-right: 0px;
   padding-left: 0px;
+}
+
+.toast-error {
+  border-radius: 40px !important;
+  background-color: #b6260dbb !important;
+}
+
+.toast-success {
+  border-radius: 40px !important;
+  background-color: #1bb60dbb !important;
+}
+
+.mat-calendar {
+  border-radius: 20px !important;
+  font-family: "Poppins";
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(99, 99, 99, 0.308) !important;
+  opacity: 1; /* Firefox */
 }

@@ -10,11 +10,64 @@
   margin-top: 20px;
 }
 
-.bg-secondary{
+.bg-secondary {
   color: white;
   padding: 0.5rem;
 }
 
-.list-group-item{
+mat-form-field > .form-control {
+  display: inline-block;
+  width: auto;
+}
+
+.list-group-item {
   font-size: larger;
+  color: white;
+  background-color: rgb(77, 77, 77);
+}
+
+.text-muted {
+  color: rgb(182, 182, 182) !important;
+}
+
+.list-group-item:first-child {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.list-group-item:last-child {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.p-2 {
+  padding: 0px !important;
+}
+
+.card {
+  border: none;
+}
+
+.alert {
+  border-radius: 30px;
+}
+
+input {
+  border-radius: 20px;
+}
+
+select {
+  border-radius: 30px;
+}
+
+.btn-primary {
+  border-radius: 30px;
+  color: white;
+  background-color: teal;
+  border-color: transparent;
+}
+
+.btn-secondary {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }

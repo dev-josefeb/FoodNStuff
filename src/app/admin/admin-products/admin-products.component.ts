@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnDestroy, ViewChild } from '@angular/core';
-import { AppProduct } from '../../models/app-product';
-import { ProductService } from '../../product.service';
+import { AppProduct } from '../../_models/app-product';
+import { ProductService } from '../../_services/product.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
