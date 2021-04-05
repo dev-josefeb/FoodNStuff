@@ -28,7 +28,7 @@
 
     <ul class="navbar-nav">
       <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
-        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" aria-haspopup="true" aria-expanded="false"> <img src="https://img.icons8.com/color/96/000000/gender-neutral-user.png" /> {{ appUser.name | titlecase }}</a>
+        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" aria-haspopup="true" aria-expanded="false"> <img src="./assets/images/user.png" /> {{ (appUser.name | titlecase) || appUser.email }}</a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
           <ng-container *ngIf="appUser.isAdmin">
