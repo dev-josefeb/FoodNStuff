@@ -10,6 +10,6 @@ export interface Billing {
   sameShippingAddress: false;
   cardName: string;
   cardNumber: string;
-  cardExpiry: string;
+  cardExpiry: Date;
   cardCvv: string;
 }

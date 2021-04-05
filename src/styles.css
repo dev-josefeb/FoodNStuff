@@ -26,3 +26,14 @@ body {
   border-radius: 40px !important;
   background-color: #1bb60dbb !important;
 }
+
+.mat-calendar {
+  border-radius: 20px !important;
+  font-family: "Poppins";
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(99, 99, 99, 0.308) !important;
+  opacity: 1; /* Firefox */
+}

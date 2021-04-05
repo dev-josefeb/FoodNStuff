@@ -15,8 +15,19 @@
   padding: 0.5rem;
 }
 
+mat-form-field > .form-control {
+  display: inline-block;
+  width: auto;
+}
+
 .list-group-item {
   font-size: larger;
+  color: white;
+  background-color: rgb(77, 77, 77);
+}
+
+.text-muted {
+  color: rgb(182, 182, 182) !important;
 }
 
 .list-group-item:first-child {

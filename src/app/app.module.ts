@@ -18,6 +18,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrModule } from 'ngx-toastr';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -78,6 +80,8 @@ import { OrderService } from './_services/order.service';
     MatTableModule,
     FontAwesomeModule,
     ToastrModule.forRoot({ positionClass: 'toast-bottom-right' }),
+    MatDatepickerModule,
+    MatNativeDateModule,
 
     NgbModule,
     MatPaginatorModule,
@@ -106,7 +110,7 @@ import { OrderService } from './_services/order.service';
     FontAwesomeModule,
     HttpClientModule,
   ],
-  providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService, ShoppingCartService, CountryService, OrderService],
+  providers: [AuthService, AuthguardService, AdminAuthGuardService, UserService, CategoryService, ProductService, ShoppingCartService, CountryService, OrderService, MatDatepickerModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
