@@ -7,3 +7,15 @@
   margin-left: 20px;
   margin-right: 20px;
 }
+
+input {
+  border-radius: 30px;
+}
+
+.btn {
+  border-radius: 30px;
+}
+
+.btn-primary {
+  background-color: teal;
+}

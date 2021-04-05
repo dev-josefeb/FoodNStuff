@@ -1,7 +1,8 @@
 <div class="my-container">
-  <p>
-    <input #query (keyup)="filter(query.value)" type="text" class="form-control" placeholder="Search.." />
-  </p>
+  <div class="row text-center">
+    <input #query (keyup)="filter(query.value)" type="text" class="form-control col" placeholder="Search.." />
+    <a class="col-4" routerLink="/admin/products/new" class="btn btn-primary">New Product</a>
+  </div>
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
       <!-- Image Column -->
@@ -44,5 +45,4 @@
     </table>
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
   </div>
-  <p><a routerLink="/admin/products/new" class="btn btn-primary">New Product</a></p>
 </div>
