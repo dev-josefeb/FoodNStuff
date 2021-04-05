@@ -26,6 +26,10 @@
   margin-right: 5px !important;
 }
 
+.col-lg-12 {
+  margin-bottom: 30px;
+}
+
 h1 {
   margin-top: 0.5rem !important;
   margin-bottom: 0.5rem !important;
@@ -44,7 +48,7 @@ body {
   background-color: #eceff1;
   padding-bottom: 20px;
   margin-top: 20px;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .top {

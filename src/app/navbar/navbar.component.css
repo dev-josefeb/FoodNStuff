@@ -66,6 +66,10 @@ nav {
   padding-left: 1.2rem;
 }
 
+.dropdown-item:active {
+  background-color: teal;
+}
+
 a:hover {
   transform: scale(1.01);
   text-shadow: 2px 2px 15px #cececeb0;
