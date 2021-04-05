@@ -26,9 +26,9 @@
         </form>
         <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm.value)" class="sign-up-form">
           <h2 class="title">Sign up</h2>
-          <div class="input-field" [class.is-invalid]="username.touched && username.invalid">
+          <div class="input-field" [class.is-invalid]="fullName.touched && fullName.invalid">
             <i class="fa fa-user"></i>
-            <input required #username="ngModel" [(ngModel)]="user.username" name="username" type="text" placeholder="Full Name" autocomplete="off" />
+            <input required #fullName="ngModel" [(ngModel)]="user.fullName" name="fullName" type="text" placeholder="Full Name" autocomplete="off" />
           </div>
           <div class="input-field" [class.is-invalid]="email.touched && email.invalid">
             <i class="fa fa-envelope"></i>

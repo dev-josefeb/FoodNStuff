@@ -3,6 +3,7 @@ import { AuthService } from '../_services/auth.service';
 import { faGoogle, faGithub, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from '../_services/user.service';
 import firebase from 'firebase';
 
 @Component({
@@ -12,7 +13,7 @@ import firebase from 'firebase';
 })
 export class LoginComponent {
   isSignup = false;
-  user = { username: '', email: '', password: '', confirmPassword: '' };
+  user = { fullName: '', email: '', password: '', confirmPassword: '' };
   userLogin = { email: '', password: '' };
 
   faGithub = faGithub;
@@ -24,7 +25,7 @@ export class LoginComponent {
   authGoogle = new firebase.auth.GoogleAuthProvider();
   authGitHub = new firebase.auth.GithubAuthProvider();
 
-  constructor(private auth: AuthService, private toastr: ToastrService) {}
+  constructor(private auth: AuthService, private toastr: ToastrService, private userService: UserService) {}
 
   login(authprovider: firebase.auth.AuthProvider) {
     this.auth.login(authprovider);
@@ -44,6 +45,7 @@ export class LoginComponent {
       (res) => {
         console.log(res);
         this.toastr.success('Your account has been created');
+        this.auth.user$.subscribe((user) => this.userService.saveRegisteredUser(value, user));
       },
       (err) => {
         console.log(err);
