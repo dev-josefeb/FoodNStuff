@@ -10,3 +10,15 @@ table {
 thead {
   border-top-left-radius: 20px !important;
 }
+
+.btn-primary {
+  background-color: teal;
+  border-radius: 30px;
+  border: none;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
