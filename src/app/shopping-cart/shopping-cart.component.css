@@ -53,11 +53,15 @@ body {
 }
 
 .summary {
-  background-color: #ddd;
+  background-color: rgba(80, 80, 80, 0.897);
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   padding: 4vh;
-  color: rgb(65, 65, 65);
+  color: rgb(255, 255, 255);
+}
+
+hr {
+  color: white !important;
 }
 
 @media (max-width: 767px) {
