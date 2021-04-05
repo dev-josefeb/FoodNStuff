@@ -137,6 +137,7 @@ form {
 
 select {
   border: 1px solid rgba(0, 0, 0, 0.137);
+  border-radius: 30px;
   padding: 1.5vh 1vh;
   margin-bottom: 4vh;
   outline: none;
@@ -146,6 +147,7 @@ select {
 
 input {
   border: 1px solid rgba(0, 0, 0, 0.137);
+  border-radius: 30px;
   padding: 1vh;
   margin-bottom: 4vh;
   outline: none;

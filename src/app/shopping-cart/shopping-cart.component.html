@@ -11,6 +11,9 @@
           </div>
         </div>
         <div class="scroll">
+          <div *ngIf="cart.items.length === 0">
+            <p class="ml-3">You have no items in your shopping cart</p>
+          </div>
           <div @todoAnimation [class.border-bottom]="i === cart.items.length - 1 || i % 2 !== 0" [class.border-top]="i === 0 || i % 2 !== 0" class="row border-top border-bottom" *ngFor="let item of cart.items; trackBy: identify; let i = index">
             <div class="row main align-items-center">
               <div class="col-3"><img class="img-fluid" [src]="item.imageUrl" /></div>
