@@ -19,10 +19,7 @@ export class AuthService {
   }
 
   login(authprovider: firebase.auth.AuthProvider) {
-    let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
-    console.log(returnUrl);
-    localStorage.setItem('returnUrl', returnUrl);
-
+    this.setReturlUrl();
     this.fireAuth.signInWithPopup(authprovider).then();
   }
 
@@ -38,5 +35,41 @@ export class AuthService {
         return of(null);
       })
     );
+  }
+
+  loginWithEmail(value) {
+    this.setReturlUrl();
+    return new Promise<any>((resolve, reject) => {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(value.loginEmail, value.loginPassword)
+        .then(
+          (res) => {
+            resolve(res);
+          },
+          (err) => reject(err)
+        );
+    });
+  }
+
+  doRegisterWithEmail(value) {
+    this.setReturlUrl();
+
+    return new Promise<any>((resolve, reject) => {
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(value.email, value.password)
+        .then(
+          (res) => {
+            resolve(res);
+          },
+          (err) => reject(err)
+        );
+    });
+  }
+
+  private setReturlUrl() {
+    let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
+    localStorage.setItem('returnUrl', returnUrl);
   }
 }

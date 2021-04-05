@@ -2,53 +2,47 @@
   <div class="container-one" [class.sign-up-mode]="isSignup">
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="#" class="sign-in-form">
+        <form #loginForm="ngForm" (ngSubmit)="loginWithEmail(loginForm.value)" class="sign-in-form">
           <h2 class="title">Sign in</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input required #loginEmail="ngModel" [(ngModel)]="userLogin.email" name="loginEmail" type="text" placeholder="Email" autocomplete="off" />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input required #loginPassword="ngModel" [(ngModel)]="userLogin.password" name="loginPassword" type="password" placeholder="Password" />
           </div>
-          <input type="submit" value="Login" class="btn solid" />
+          <input [disabled]="!loginForm.valid" type="submit" value="Login" class="btn solid" />
           <p class="social-text">Or Sign in with social platforms</p>
           <div class="">
-            <button class="social btn-google" (click)="login(authGoogle)"><fa-icon class="fa-3x" [icon]="faGoogle"></fa-icon></button>
-            <button class="social btn-github" (click)="login(authGitHub)"><fa-icon class="fa-3x" [icon]="faGithub"></fa-icon></button>
-            <button class="social btn-facebook" disabled (click)="login(authGitHub)"><fa-icon class="fa-3x" [icon]="faFacebook"></fa-icon></button>
-            <button class="social btn-adn" disabled (click)="login(authGitHub)"><fa-icon class="fa-3x" [icon]="faMailBulk"></fa-icon></button>
+            <button type="button" class="social btn-google" (click)="login(authGoogle)"><fa-icon class="fa-3x" [icon]="faGoogle"></fa-icon></button>
+            <button type="button" class="social btn-github" (click)="login(authGitHub)"><fa-icon class="fa-3x" [icon]="faGithub"></fa-icon></button>
+            <button type="button" class="social btn-facebook" disabled (click)="login(authGitHub)"><fa-icon class="fa-3x" [icon]="faFacebook"></fa-icon></button>
+            <button type="button" class="social btn-adn" disabled (click)="login(authGitHub)"><fa-icon class="fa-3x" [icon]="faMailBulk"></fa-icon></button>
           </div>
           <div>
             <p class="social-text text-muted">Google Github Facebook Email</p>
           </div>
         </form>
-        <form action="#" class="sign-up-form">
+        <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm.value)" class="sign-up-form">
           <h2 class="title">Sign up</h2>
-          <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+          <div class="input-field" [class.is-invalid]="username.touched && username.invalid">
+            <i class="fa fa-user"></i>
+            <input required #username="ngModel" [(ngModel)]="user.username" name="username" type="text" placeholder="Full Name" autocomplete="off" />
           </div>
-          <div class="input-field">
-            <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" />
+          <div class="input-field" [class.is-invalid]="email.touched && email.invalid">
+            <i class="fa fa-envelope"></i>
+            <input required #email="ngModel" [(ngModel)]="user.email" required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" name="email" type="email" placeholder="Email" autocomplete="off" />
           </div>
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+          <div class="input-field" [class.is-invalid]="password.touched && password.invalid">
+            <i class="fa fa-lock"></i>
+            <input required #password="ngModel" [(ngModel)]="user.password" name="password" type="password" placeholder="Password" />
           </div>
-          <input type="submit" class="btn" value="Sign up" />
-          <p class="social-text">Or Sign up with social platforms</p>
-          <div class="">
-            <button class="social btn-google" (click)="login(authGoogle)"><fa-icon class="fa-3x" [icon]="faGoogle"></fa-icon></button>
-            <button class="social btn-github" (click)="login(authGitHub)"><fa-icon class="fa-3x" [icon]="faGithub"></fa-icon></button>
-            <button class="social btn-facebook" disabled (click)="login(authGitHub)"><fa-icon class="fa-3x" [icon]="faFacebook"></fa-icon></button>
-            <button class="social btn-adn" disabled (click)="login(authGitHub)"><fa-icon class="fa-3x" [icon]="faMailBulk"></fa-icon></button>
+          <div class="input-field" [class.is-invalid]="confirmPassword.touched && confirmPassword.invalid">
+            <i class="fa fa-lock"></i>
+            <input required #confirmPassword="ngModel" [(ngModel)]="user.confirmPassword" name="confirmPassword" type="password" placeholder="Confirm Password" />
           </div>
-          <div>
-            <p class="social-text text-muted">Google Github Facebook Email</p>
-          </div>
+          <input [disabled]="!registerForm.valid" type="submit" class="btn" value="Sign up" />
         </form>
       </div>
     </div>
@@ -57,7 +51,7 @@
       <div class="panel left-panel">
         <div class="content">
           <h3>New here ?</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, ex ratione. Aliquid!</p>
+          <p>Hi Friend! Create a FoodN'Stuff account to gain exclusive customer benefits and recieve early bird offers!</p>
           <button (click)="isSignup = true" class="btn transparent" id="sign-up-btn">Sign up</button>
         </div>
         <img src="./assets/icons/log.svg" class="image" alt="" />
@@ -65,7 +59,7 @@
       <div class="panel right-panel">
         <div class="content">
           <h3>One of us ?</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum laboriosam ad deleniti.</p>
+          <p>Sign in with your existing FoodN'Stuff account to access all your orders and get exclusive customer benefits!</p>
           <button (click)="isSignup = false" class="btn transparent" id="sign-in-btn">Sign in</button>
         </div>
         <img src="./assets/icons/register.svg" class="image" alt="" />

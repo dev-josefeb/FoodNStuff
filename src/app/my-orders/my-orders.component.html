@@ -28,7 +28,7 @@
   </div>
 
   <div class="text-center">
-    <h6>You have no orders to show here</h6>
+    <h6 *ngIf="orders.length === 0">You have no orders to show here</h6>
     <button routerLink="/products" class="btn btn-primary btn-lg mt-3">Back to Shop</button>
   </div>
 </div>
