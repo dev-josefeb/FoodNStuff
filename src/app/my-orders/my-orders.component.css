@@ -22,3 +22,8 @@ thead {
 .btn-primary:hover {
   opacity: 0.9;
 }
+
+.btn-danger {
+  opacity: 0.9;
+  border-radius: 30px;
+}
