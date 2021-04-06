@@ -40,6 +40,7 @@ import { CategoryCardComponent } from './home/category-card/category-card.compon
 import { FooterComponent } from './home/footer/footer.component';
 import { TestimonialsComponent } from './home/testimonials/testimonials.component';
 import { CategoriesDisplayComponent } from './home/categories-display/categories-display.component';
+import { ImageGalleryComponent } from './gallery/gallery.component';
 
 import { AuthService } from './_services/auth.service';
 import { AuthguardService } from './_services/authguard.service';
@@ -51,7 +52,6 @@ import { ShoppingCartService } from './_services/shopping-cart.service';
 import { CountryService } from './_services/country.service';
 import { OrderService } from './_services/order.service';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { ImageGalleryComponent } from './about-us/image-gallery/image-gallery.component';
 
 @NgModule({
   declarations: [
