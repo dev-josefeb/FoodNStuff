@@ -1,0 +1,15 @@
+<div class="ml-3 mr-3 container-all">
+  <h1>See and Explore Our Farm</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quisquam ipsam ipsa minima, amet esse quaerat tempore soluta corrupti molestias.Perferendis quisquam ipsam ipsa minima, amet esse quaerat tempore soluta corrupti molestias.</p>
+
+  <div class="grid-container">
+    <div *ngFor="let image of images">
+      <div class="image-box">
+        <img *ngIf="imageLoading" class="grid-item grid-item-1" src="/assets/loadingImages/image_loading3.gif" alt="loading" />
+        <img [hidden]="imageLoading" (load)="onLoad()" class="grid-item grid-item-1" src="{{ image.url }}" />
+        <span class="title">{{ (image.title | titlecase) || "Lorem ipsum dolor" }}</span>
+        <span class="text">{{ image.text || "Morbi diam viverra mattis sociis magna, habitasse penatibus non lectus" }}</span>
+      </div>
+    </div>
+  </div>
+</div>

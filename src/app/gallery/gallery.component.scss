@@ -1,0 +1,121 @@
+.container-all {
+  margin-top: 40px;
+  //   background-color: rgb(44, 44, 44);
+}
+h1 {
+  padding-top: 20px;
+}
+
+.title {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  top: 20%;
+  display: none;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6em;
+  text-shadow: 1px 5px 10px black;
+  transition-duration: 0.3s;
+}
+
+.text {
+  position: absolute;
+  top: 80%;
+  cursor: pointer;
+  max-width: 80%;
+  text-align: center;
+  left: 50%;
+  text-shadow: 1px 5px 10px black;
+  font-size: 1em;
+  display: none;
+  margin-right: -50%;
+  transition-duration: 0.3s;
+  transform: translate(-50%, -50%);
+}
+.image-box:hover span {
+  color: white;
+  display: block;
+  transition-duration: 1s;
+}
+
+.grid-container {
+  columns: 3 200px;
+  width: 100%;
+  margin: 0 auto;
+  div {
+    width: 200px;
+    // margin: 0 1.5rem 1.5rem 0;
+    display: inline-block;
+    width: 100%;
+    border-radius: 20px;
+    transition: all 0.25s ease-in-out;
+    // &:hover img {
+    //   transform: scale(1.5);
+    // }
+    &:hover {
+      border-color: coral;
+    }
+    img {
+      width: 100%;
+      transition: all 0.25s ease-in-out;
+    }
+    p {
+      margin: 5px 0;
+      padding: 0;
+      text-align: center;
+      font-style: italic;
+    }
+  }
+}
+
+.image-box {
+  position: relative;
+  margin: 5px auto;
+  overflow: hidden;
+  width: 540px;
+  border-radius: 20px;
+}
+
+.image-box img {
+  max-width: 100%;
+  transition: all 0.3s;
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1);
+}
+.image-box:hover img {
+  transform: scale(1.1);
+  filter: brightness(70%);
+  //   -webkit-filter: brightness(50%);
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 1em;
+  }
+
+  .text {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .grid-container {
+    columns: 4 400px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .grid-container {
+    columns: 5 400px;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .grid-container {
+    columns: 6 400px;
+  }
+}

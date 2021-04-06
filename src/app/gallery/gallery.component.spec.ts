@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImageGalleryComponent } from './image-gallery.component';
+import { ImageGalleryComponent } from './gallery.component';
 
 describe('ImageGalleryComponent', () => {
   let component: ImageGalleryComponent;
@@ -8,9 +8,8 @@ describe('ImageGalleryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ImageGalleryComponent ]
-    })
-    .compileComponents();
+      declarations: [ImageGalleryComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
