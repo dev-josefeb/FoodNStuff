@@ -40,6 +40,8 @@ import { CategoryCardComponent } from './home/category-card/category-card.compon
 import { FooterComponent } from './home/footer/footer.component';
 import { TestimonialsComponent } from './home/testimonials/testimonials.component';
 import { CategoriesDisplayComponent } from './home/categories-display/categories-display.component';
+import { ImageGalleryComponent } from './gallery/gallery.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 import { AuthService } from './_services/auth.service';
 import { AuthguardService } from './_services/authguard.service';
@@ -72,6 +74,8 @@ import { OrderService } from './_services/order.service';
     CategoriesDisplayComponent,
     FooterComponent,
     TestimonialsComponent,
+    AboutUsComponent,
+    ImageGalleryComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,12 +97,15 @@ import { OrderService } from './_services/order.service';
     AngularFireAuthModule,
     NgbModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, data: { animation: 'isLeft' } },
-      { path: 'products', component: ProductsComponent },
-      { path: 'shopping-cart', component: ShoppingCartComponent, data: { animation: 'isRight' } },
-      { path: 'login', component: LoginComponent },
+      { path: '', component: HomeComponent, data: { animation: 'isStart' } },
+      { path: 'products', component: ProductsComponent, data: { animation: 'isLeft' } },
+      { path: 'about-us', component: AboutUsComponent },
+      { path: 'gallery', component: ImageGalleryComponent, data: { animation: 'isRight' } },
 
-      { path: 'checkout', component: CheckoutComponent, canActivate: [AuthguardService] },
+      { path: 'login', component: LoginComponent },
+      { path: 'shopping-cart', component: ShoppingCartComponent, data: { animation: 'isEnd' } },
+
+      { path: 'checkout', component: CheckoutComponent, canActivate: [AuthguardService], data: { animation: 'isLeft' } },
       { path: 'order-success/:id', component: OrderSuccessComponent, canActivate: [AuthguardService] },
       { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthguardService] },
 
